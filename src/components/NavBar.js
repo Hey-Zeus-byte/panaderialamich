@@ -5,18 +5,19 @@ import { Link } from "react-router-dom";
 
 const TitleContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   border: 3px solid black;
   width: auto;
-  height: auto;
   text-align: center;
   background-color: #6aa68b;
+  padding: 5px 50px 10px;
+  justify-content: space-between;
 `;
 
 const Panaderia = styled.p`
   color: green;
   font-size: 55px;
+  margin: 0;
 `;
 
 const LaMich = styled.p`
@@ -24,33 +25,35 @@ const LaMich = styled.p`
   font-size: 30px;
   border: 2px solid black;
   border-radius: 25px;
+  margin: 0;
 `;
 
 const NavList = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  gap: 100px;
 `;
 
 const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 30px;
+  color: black;
 `;
 
 const NavBar = () => {
   return (
-    <TitleContainer>
-      <ContentWrapper>
-        <>
+    <ContentWrapper>
+      <TitleContainer>
+        <div>
           <Panaderia>PANADERIA</Panaderia>
           <LaMich>LA MICHOACANA</LaMich>
-        </>
+        </div>
         <NavList>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/pan">Pan</NavLink>
+          <NavLink to="/pasteles">Pasteles</NavLink>
         </NavList>
-      </ContentWrapper>
-    </TitleContainer>
+      </TitleContainer>
+    </ContentWrapper>
   );
 };
 

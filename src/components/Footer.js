@@ -6,6 +6,7 @@ import { openGoogleMaps } from "./Map";
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
   background-color: #f6f6f6;
   left: 0;
   bottom: 0;
@@ -20,11 +21,13 @@ const CopyRightText = styled.p`
 
 const Information = styled(CopyRightText)`
   font-size: 15px;
+  margin: 2px 0;
 `;
 
 const Address = styled(CopyRightText)`
   font-size: 15px;
   cursor: pointer;
+  margin: 0;
 
   &:hover {
     color: red;
@@ -33,10 +36,10 @@ const Address = styled(CopyRightText)`
 
 const Footer = () => {
   return (
-    <Container>
-      <ContentWrapper>
+    <ContentWrapper>
+      <Container>
         <div>
-          <Information> Panaderia La Michoacana</Information>
+          <Information>Panaderia La Michoacana</Information>
           <Address onClick={openGoogleMaps}>
             3801 Yosemite Blvd, Suite B Modesto, CA 95357
           </Address>
@@ -48,8 +51,8 @@ const Footer = () => {
             Reserved.
           </CopyRightText>
         </div>
-      </ContentWrapper>
-    </Container>
+      </Container>
+    </ContentWrapper>
   );
 };
 
