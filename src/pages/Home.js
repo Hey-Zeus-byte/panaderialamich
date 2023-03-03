@@ -1,7 +1,6 @@
 import { ContentWrapper } from "../components/ContentWrapper";
 import styled from "styled-components";
 import { useState } from "react";
-import InstagramEmbed from "react-instagram-embed";
 
 const Text = styled.p`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -93,19 +92,6 @@ const Home = () => {
       <AboutUs />
       <HoursAndIGContainer>
         <BusHours />
-        <InstagramEmbed
-          url="https://www.instagram.com/lapanaderialamichoacana/"
-          // clientAccessToken="123|456"
-          maxWidth={320}
-          hideCaption={false}
-          containerTagName="div"
-          protocol=""
-          injectScript
-          onLoading={() => {}}
-          onSuccess={() => {}}
-          onAfterRender={() => {}}
-          onFailure={() => {}}
-        />
       </HoursAndIGContainer>
     </ContentWrapper>
   );
