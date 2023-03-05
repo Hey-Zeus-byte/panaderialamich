@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const MobileNavLinkWrapper = styled.div`
+const MobileNavWrapper = styled.div`
   position: absolute;
   @media only screen and (min-width: 768px) {
     display: none;
@@ -40,7 +40,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const NavLinkWrapper = styled.div`
+const NavWrapper = styled.div`
   background-color: rgb(245, 244, 220);
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.3s ease-in-out;
@@ -53,18 +53,16 @@ const NavLinkWrapper = styled.div`
   z-index: 1;
 `;
 
-const MobileMenu = ({ open }) => {
-  const [openDropDown] = useState();
-
+const MobileNavMenu = ({ open }) => {
   return (
-    <MobileNavLinkWrapper open={open}>
-      <NavLinkWrapper open={open}>
-        <NavLink to="/about-me">ABOUT ME</NavLink>
-        <NavLink to="/designs">DESIGNS</NavLink>
-        <NavLink to="/contact">CONTACT</NavLink>
-      </NavLinkWrapper>
-    </MobileNavLinkWrapper>
+    <MobileNavWrapper open={open}>
+      <NavWrapper open={open}>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/pan">Pan</NavLink>
+        <NavLink to="/pasteles">Pasteles</NavLink>
+      </NavWrapper>
+    </MobileNavWrapper>
   );
 };
 
-export default MobileMenu;
+export default MobileNavMenu;

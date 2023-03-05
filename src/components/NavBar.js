@@ -1,25 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { ContentWrapper } from "./ContentWrapper";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
+import { HamburgerButton } from "./HamburgerButton";
 
-const TitleContainer = styled.div`
+const NavFlexWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: auto;
   text-align: center;
   background-color: white;
   padding: 5px 50px 10px;
   justify-content: space-between;
+
+  @media only screen and (max-width: 850px) {
+    padding: 5px 30px 10px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 5px 10px 10px;
+  }
 `;
 
 const NavList = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 100px;
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    gap: 90px;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -38,23 +49,37 @@ const InstagramLink = styled.a`
   height: auto;
 `;
 
-const NavBar = () => {
+const DesktopNavBar = () => {
   return (
-    <ContentWrapper>
-      <TitleContainer>
-        <div>
-          <Logo src={logo} alt="panaderia_la_michoacana_logo" />
-        </div>
-        <NavList>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/pan">Pan</NavLink>
-          <NavLink to="/pasteles">Pasteles</NavLink>
-          <InstagramLink href="https://www.instagram.com/lapanaderialamichoacana/">
-            <FontAwesomeIcon icon={faInstagram} size="2x" color="black" />
-          </InstagramLink>
-        </NavList>
-      </TitleContainer>
-    </ContentWrapper>
+    <NavList>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/pan">Pan</NavLink>
+      <NavLink to="/pasteles">Pasteles</NavLink>
+      <InstagramLink
+        href="https://www.instagram.com/lapanaderialamichoacana/"
+        target="_blank"
+      >
+        <FontAwesomeIcon icon={faInstagram} size="2x" color="black" />
+      </InstagramLink>
+    </NavList>
+  );
+};
+
+const NavBar = () => {
+  const [open] = useState();
+
+  return (
+    <div>
+      <ContentWrapper>
+        <NavFlexWrapper>
+          <NavLink to="/">
+            <Logo src={logo} alt="panaderia_la_michoacana_logo" />
+          </NavLink>
+          <DesktopNavBar />
+          <HamburgerButton onToggle={open} />
+        </NavFlexWrapper>
+      </ContentWrapper>
+    </div>
   );
 };
 

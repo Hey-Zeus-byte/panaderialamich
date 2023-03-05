@@ -47,8 +47,8 @@ const Footer = () => {
         </div>
         <div>
           <CopyRightText>
-            Copyright © 2023 Panaderia La Michoacana or Jesus Valdez. All Rights
-            Reserved.
+            Copyright © 2023 Panaderia La Michoacana or Its Affiliates. All
+            Rights Reserved.
           </CopyRightText>
         </div>
       </Container>

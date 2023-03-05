@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import MobileNavMenu from "./MobileNavMenu";
 
 const HamburgerButtonWrapper = styled.div`
   display: block;
@@ -13,6 +14,7 @@ const HamburgerButtonWrapper = styled.div`
     border-radius: 5px;
     transform-origin: 0;
     transition: all 0.3s linear;
+
     &:nth-child(1) {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
@@ -24,14 +26,12 @@ const HamburgerButtonWrapper = styled.div`
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
-  /* project uses max-width, but min-width is
-   appropriate because should always display block in mobiel devices only */
+
   @media only screen and (min-width: 768px) {
     display: none;
   }
 `;
 
-//Module Exports
 export const HamburgerButton = ({ onToggle }) => {
   const [open, setOpen] = useState();
 
@@ -49,6 +49,7 @@ export const HamburgerButton = ({ onToggle }) => {
         <div />
         <div />
       </HamburgerButtonWrapper>
+      <MobileNavMenu open={open} />
     </>
   );
 };
