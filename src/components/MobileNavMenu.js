@@ -4,10 +4,10 @@ import styled from "styled-components";
 
 const MobileNavWrapper = styled.div`
   position: absolute;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 820px) {
     display: none;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 820px) {
     &::after {
       display: ${({ open }) => (open ? "block" : "none")};
       background-color: #00000040;

@@ -29,7 +29,7 @@ const NavList = styled.div`
 
   @media only screen and (min-width: 768px) {
     display: flex;
-    gap: 90px;
+    gap: 60px;
   }
 `;
 
@@ -37,6 +37,10 @@ const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 30px;
   color: black;
+
+  @media only screen and (max-width: 1050px) {
+    font-size: 25px;
+  }
 `;
 
 const Logo = styled.img`

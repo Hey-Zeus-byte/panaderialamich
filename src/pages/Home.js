@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import lobby from "../images/lobby.jpeg";
 import { openGoogleMaps } from "../components/Map";
+import ImageSlider from "../components/ImageSlider";
 
 const Text = styled.p`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -18,7 +19,7 @@ const Text = styled.p`
   }
 
   @media only screen and (max-width: 500px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 
@@ -27,6 +28,9 @@ const WeightText = styled(Text)`
 `;
 
 const RedText = styled(Text)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 60px;
   margin: 5px;
@@ -38,6 +42,9 @@ const RedText = styled(Text)`
 
   @media only screen and (max-width: 768px) {
     font-size: 30px;
+  }
+  @media only screen and (max-width: 520px) {
+    font-size: 20px;
   }
 `;
 
@@ -105,6 +112,9 @@ const AboutUsContainer = styled.div`
     @media only screen and (max-width: 768px) {
       font-size: 18px;
     }
+    @media only screen and (max-width: 450px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -119,12 +129,50 @@ const ContactUsContainer = styled.div`
   align-items: center;
   line-height: 50px;
 `;
+const MiddleContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 40px;
+
+  @media only screen and (max-width: 1250px) {
+    flex-direction: column-reverse;
+  }
+
+  @media only screen and (max-width: 768px) {
+  }
+
+  @media only screen and (max-width: 500px) {
+  }
+`;
 
 const BottomContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px;
+`;
+
+const SliderStylesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 900px;
+  height: 600px;
+
+  @media only screen and (max-width: 1250px) {
+    width: 700px;
+    height: 600px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 500px;
+    height: 400px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 350px;
+    height: 300px;
+  }
 `;
 
 const AboutUs = () => {
@@ -172,8 +220,9 @@ const ContactUs = () => {
       <div>
         <WeightText>Address:</WeightText>
         <Text onClick={openGoogleMaps} style={{ cursor: "pointer" }}>
-          3801 Yosemite Boulevard, Suite 3 Modesto, CA 95357
+          3801 Yosemite Boulevard, Suite 3
         </Text>
+        <Text>Modesto, CA 95357</Text>
         <WeightText>Phone:</WeightText>
         <Text>209-578-3599</Text>
         <WeightText>Business Hours:</WeightText>
@@ -189,7 +238,14 @@ const Home = () => {
   return (
     <ContentWrapper>
       <AboutUs />
-      <ContactUs />
+      <MiddleContainer>
+        <ContactUs />
+        <div>
+          <SliderStylesContainer>
+            <ImageSlider />
+          </SliderStylesContainer>
+        </div>
+      </MiddleContainer>
       <BottomContainer>
         <RedText>We do not offer online ordering.</RedText>
       </BottomContainer>
