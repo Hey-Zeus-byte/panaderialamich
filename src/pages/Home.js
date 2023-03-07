@@ -220,7 +220,7 @@ const ContactUs = () => {
       <div>
         <WeightText>Address:</WeightText>
         <Text onClick={openGoogleMaps} style={{ cursor: "pointer" }}>
-          3801 Yosemite Boulevard, Suite 3
+          3801 Yosemite Boulevard, Suite B
         </Text>
         <Text>Modesto, CA 95357</Text>
         <WeightText>Phone:</WeightText>

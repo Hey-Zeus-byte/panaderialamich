@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { ContentWrapper } from "./ContentWrapper";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
@@ -29,7 +27,7 @@ const NavList = styled.div`
 
   @media only screen and (min-width: 768px) {
     display: flex;
-    gap: 60px;
+    gap: 100px;
   }
 `;
 
@@ -48,23 +46,12 @@ const Logo = styled.img`
   height: auto;
 `;
 
-const InstagramLink = styled.a`
-  width: 100%;
-  height: auto;
-`;
-
 const DesktopNavBar = () => {
   return (
     <NavList>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/pan">Pan</NavLink>
       <NavLink to="/pasteles">Pasteles</NavLink>
-      <InstagramLink
-        href="https://www.instagram.com/lapanaderialamichoacana/"
-        target="_blank"
-      >
-        <FontAwesomeIcon icon={faInstagram} size="2x" color="black" />
-      </InstagramLink>
     </NavList>
   );
 };

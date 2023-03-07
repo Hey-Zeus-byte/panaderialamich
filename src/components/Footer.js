@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ContentWrapper } from "./ContentWrapper";
 import { openGoogleMaps } from "./Map";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Container = styled.div`
   display: flex;
@@ -34,6 +36,11 @@ const Address = styled(CopyRightText)`
   }
 `;
 
+const InstagramLink = styled.a`
+  width: 100%;
+  height: auto;
+`;
+
 const Footer = () => {
   return (
     <ContentWrapper>
@@ -44,6 +51,12 @@ const Footer = () => {
             3801 Yosemite Blvd, Suite B Modesto, CA 95357
           </Address>
           <Information>209-578-3599</Information>
+          <InstagramLink
+            href="https://www.instagram.com/lapanaderialamichoacana/"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faInstagram} size="2x" color="black" />
+          </InstagramLink>
         </div>
         <div>
           <CopyRightText>
