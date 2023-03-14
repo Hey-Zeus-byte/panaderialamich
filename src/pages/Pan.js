@@ -1,25 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ContentWrapper } from "../components/ContentWrapper";
-import happyface from "../images/happyface.png";
-import display1 from "../images/display1.jpg";
-import display2 from "../images/display2.jpg";
-import chocochipcookie from "../images/chocochipcookie.jpeg";
-import chococupcake from "../images/chococupcake.jpeg";
-import crownstack from "../images/crownstack.jpeg";
-import pig from "../images/pig.png";
-import pinkcookie from "../images/pinkcookie.jpeg";
-
-const PAN = [
-  { name: "happy face", image: happyface },
-  { name: "display one", image: display1 },
-  { name: "display two", image: display2 },
-  { name: "chocolate chip cookie", image: chocochipcookie },
-  { name: "chocolate cupcake", image: chococupcake },
-  { name: "roscas", image: crownstack },
-  { name: "puerco", image: pig },
-  { name: "Pink Cookie", image: pinkcookie },
-];
+import { COOKIES, FIGURA } from "../images/Inventory";
 
 const PanWrapper = styled.div`
   display: flex;
@@ -29,14 +11,20 @@ const PanWrapper = styled.div`
   padding: 20px 0;
 `;
 
-const ImageWrapper = styled.div``;
+const ImageWrapper = styled.div`
+  cursor: pointer;
+`;
 
 const PanImage = styled.img`
   width: 475px;
   height: 375px;
   border-radius: 20px;
 
-  /* give a hover effect */
+  &:hover,
+  :focus {
+    width: 655px;
+    height: 525px;
+  }
 
   @media only screen and (max-width: 1250px) {
     width: 425px;
@@ -74,18 +62,42 @@ const PanName = styled.p`
   }
 `;
 
+const Cookies = () => {
+  return (
+    <>
+      {COOKIES.map((cookie) => {
+        return (
+          <ImageWrapper>
+            <PanImage src={cookie.image} alt={cookie.name} />
+            <PanName>{cookie.name}</PanName>
+          </ImageWrapper>
+        );
+      })}
+    </>
+  );
+};
+
+const Figura = () => {
+  return (
+    <>
+      {FIGURA.map((item) => {
+        return (
+          <ImageWrapper>
+            <PanImage src={item.image} alt={item.name} />
+            <PanName>{item.name}</PanName>
+          </ImageWrapper>
+        );
+      })}
+    </>
+  );
+};
+
 const Pan = () => {
   return (
     <ContentWrapper>
       <PanWrapper>
-        {PAN.map((pan) => {
-          return (
-            <ImageWrapper>
-              <PanImage src={pan.image} alt={pan.name} />
-              <PanName>{pan.name}</PanName>
-            </ImageWrapper>
-          );
-        })}
+        <Cookies />
+        <Figura />
       </PanWrapper>
     </ContentWrapper>
   );

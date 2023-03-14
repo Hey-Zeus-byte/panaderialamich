@@ -1,7 +1,7 @@
+import React, { useState, useEffect, useRef } from "react";
 import { ContentWrapper } from "../components/ContentWrapper";
 import styled from "styled-components";
-import { useState } from "react";
-import lobby from "../images/lobby.jpeg";
+import lobby from "../images/miscellaneous/lobby.jpg";
 import { openGoogleMaps } from "../components/Map";
 import ImageSlider from "../components/ImageSlider";
 
@@ -63,6 +63,57 @@ const Welcome = styled.h1`
   color: #b8860b; // Dark Goldenrod
   font-family: snell roundhand, cursive;
   font-size: 180px;
+
+  animation: fadeIn 7s;
+  -webkit-animation: fadeIn 7s;
+  -moz-animation: fadeIn 7s;
+  -o-animation: fadeIn 7s;
+  -ms-animation: fadeIn 7s;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   @media only screen and (max-width: 1250px) {
     font-size: 140px;
   }
@@ -77,11 +128,62 @@ const Welcome = styled.h1`
 `;
 
 const AboutUsWrapper = styled.div`
-  background-color: #b9d5d8;
+  height: 80vh;
+  background-color: #b9d5d9;
   background-image: url(${lobby});
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   padding-top: 100px;
   padding-bottom: 100px;
@@ -96,7 +198,7 @@ const AboutUsContainer = styled.div`
   gap: 20px;
 
   .about-us {
-    font-size: 26px;
+    font-size: 30px;
     text-align: center;
     line-height: 50px;
     font-weight: 800;
@@ -104,6 +206,59 @@ const AboutUsContainer = styled.div`
     color: #f0fff0;
     text-shadow: -1px 1px 10px #000, 1px 1px 2px #000, 1px -1px 0 #000,
       -1px -1px 0 #000;
+    cursor: pointer;
+
+    font-family: Arial;
+    animation: fadeIn 8s;
+    -webkit-animation: fadeIn 8s;
+    -moz-animation: fadeIn 8s;
+    -o-animation: fadeIn 8s;
+    -ms-animation: fadeIn 8s;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-moz-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-o-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-ms-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     @media only screen and (max-width: 1250px) {
       font-size: 22px;
@@ -113,13 +268,9 @@ const AboutUsContainer = styled.div`
       font-size: 18px;
     }
     @media only screen and (max-width: 450px) {
-      font-size: 16px;
+      font-size: 12px;
     }
   }
-`;
-
-const Translate = styled.button`
-  font-size: 20px;
 `;
 
 const ContactUsContainer = styled.div`
@@ -129,6 +280,70 @@ const ContactUsContainer = styled.div`
   align-items: center;
   line-height: 50px;
 `;
+
+const UpperContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 80px;
+  margin: 40px 0;
+  line-height: 50px;
+
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+  }
+
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    padding: 80px;
+    margin: 40px 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 80px;
+    margin: 40px 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 20px;
+    margin: 20px 0;
+  }
+`;
+
+const SlidingText = styled.p`
+  font-size: 80px;
+
+  @media only screen and (max-width: 1250px) {
+    font-size: 60px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 40px;
+  }
+`;
+
+const MovingNumber = styled.span`
+  font-size: 140px;
+  font-weight: 900;
+  color: #008000;
+  text-shadow: -1px 1px 10px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+`;
+
 const MiddleContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -185,7 +400,10 @@ const AboutUs = () => {
       </WelcomeCon>
       <AboutUsContainer>
         {translation ? (
-          <Text className="about-us">
+          <Text
+            className="about-us"
+            onClick={() => setTranslation(!translation)}
+          >
             Empresa familiar que ha estado sirviendo felizmente a la comunidad
             de Modesto durante más de 18+ años. Ven a visitarnos para recordar
             el olor y el sabor de la auténtica repostería mexicana. Ayúdanos a
@@ -193,21 +411,15 @@ const AboutUs = () => {
             la siguiente generación.
           </Text>
         ) : (
-          <Text className="about-us">
+          <Text
+            className="about-us"
+            onClick={() => setTranslation(!translation)}
+          >
             Family Business thats been happily serving the Modesto community for
             more than 18+ years. Come visit us to reminisce in the scent and
             taste of authentic Mexican pastries. Help us continue our tradition
             and culture by expanding the knowledge to the following generation.
           </Text>
-        )}
-        {translation ? (
-          <Translate onClick={() => setTranslation(!translation)}>
-            Click here to translate
-          </Translate>
-        ) : (
-          <Translate onClick={() => setTranslation(!translation)}>
-            Haga clic aquí para traducir
-          </Translate>
         )}
       </AboutUsContainer>
     </AboutUsWrapper>
@@ -235,9 +447,43 @@ const ContactUs = () => {
 };
 
 const Home = () => {
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisible(entry.isIntersecting);
+        }
+      });
+    });
+    observer.observe(domRef.current);
+    return () => observer.unobserve(domRef.current);
+  }, []);
+
   return (
     <ContentWrapper>
       <AboutUs />
+      <UpperContainer>
+        <SlidingText
+          className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+          ref={domRef}
+        >
+          Disfruta mas de
+        </SlidingText>
+        <MovingNumber
+          className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+          ref={domRef}
+        >
+          70
+        </MovingNumber>
+        <SlidingText
+          className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+          ref={domRef}
+        >
+          piezas de pan!
+        </SlidingText>
+      </UpperContainer>
       <MiddleContainer>
         <ContactUs />
         <div>
