@@ -1,23 +1,30 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.f7a1ec9e.js",
+    "main.js": "/static/js/main.56dca662.js",
+    "static/media/flan.jpeg": "/static/media/flan.e880b949eaddcdf75819.jpeg",
+    "static/media/treslecheswfruit.jpeg": "/static/media/treslecheswfruit.e961b85eb4f392f648cc.jpeg",
+    "static/media/tresleches.jpg": "/static/media/tresleches.8db634f32e2e0fa0981d.jpg",
+    "static/media/coffeecake.jpg": "/static/media/coffeecake.1fa662237aa8e43f5768.jpg",
+    "static/media/lobby.jpg": "/static/media/lobby.de8a039c1ba359cae112.jpg",
     "static/media/happyface.png": "/static/media/happyface.ecc9946e3911e25f961a.png",
-    "static/media/pig.png": "/static/media/pig.020d7224496f256245cf.png",
-    "static/media/lobby.jpeg": "/static/media/lobby.2065bccdfb4bdefc5a59.jpeg",
+    "static/media/apple_emp.jpg": "/static/media/apple_emp.8c6f60a81f988aac4282.jpg",
+    "static/media/pudin2.jpg": "/static/media/pudin2.eeb1fd4e445996086dfc.jpg",
     "static/media/display2.jpg": "/static/media/display2.781dbf08221c8ebb008d.jpg",
     "static/media/display1.jpg": "/static/media/display1.3ad1f5e382b82e8f90a4.jpg",
-    "static/media/chococupcake.jpeg": "/static/media/chococupcake.77bfb4cfe187b957daf6.jpeg",
+    "static/media/cakeincup.jpeg": "/static/media/cakeincup.edfc6459853d2bf1ae66.jpeg",
+    "static/media/overseejello.jpeg": "/static/media/overseejello.d5bb1865a574e6284185.jpeg",
     "static/media/chocochipcookie.jpeg": "/static/media/chocochipcookie.8a5ce8fecb5e2d7a9a83.jpeg",
     "static/media/crownstack.jpeg": "/static/media/crownstack.f1f2ef738a8952c04e4e.jpeg",
+    "static/media/fruitcake.jpeg": "/static/media/fruitcake.56d9550c7883dff6f23b.jpeg",
     "static/media/pinkcookie.jpeg": "/static/media/pinkcookie.8f7706116c91030746b1.jpeg",
     "static/media/logo.png": "/static/media/logo.9b0a46e63b25dfb2da47.png",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.f7a1ec9e.js.map": "/static/js/main.f7a1ec9e.js.map"
+    "main.56dca662.js.map": "/static/js/main.56dca662.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.f7a1ec9e.js"
+    "static/js/main.56dca662.js"
   ]
 }
