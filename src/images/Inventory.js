@@ -4,6 +4,8 @@ import chocochipcookie from "../images/cookies/chocochipcookie.jpeg";
 // import chococupcake from "../images/miscellaneous/chococupcake.jpeg";
 import crownstack from "../images/cookies/crownstack.jpeg";
 // import pig from "../images/miscellaneous/pig.png";
+import pudin from "../images/miscellaneous/pudin2.jpg";
+import apple_emp from "../images/miscellaneous/apple_emp.jpg";
 
 export const COOKIES = [
   {
@@ -30,17 +32,17 @@ export const COOKIES = [
     image: crownstack,
   },
 
-  {
-    name: "Payaso",
+  // {
+  //   name: "Payaso",
 
-    image: "",
-  },
+  //   image: "",
+  // },
 
-  {
-    name: "Almond Cookie",
+  // {
+  //   name: "Almond Cookie",
 
-    image: "",
-  },
+  //   image: "",
+  // },
 ];
 
 export const FIGURA = [
@@ -209,38 +211,37 @@ export const EMPANADAS = [
 
 export const MISC = [
   {
-    name: "Churro",
+    name: "Pudin",
 
-    image: "",
+    image: pudin,
   },
 
   {
-    name: "Chocolate Donut",
+    name: "Empanada de Manzana",
 
-    image: "",
+    image: apple_emp,
   },
+  // {
+  //   name: "",
 
-  {
-    name: "Sugar Donut",
+  //   image: "",
+  // },
 
-    image: "",
-  },
+  // {
+  //   name: "",
 
-  {
-    name: "",
+  //   image: "",
+  // },
 
-    image: "",
-  },
+  // {
+  //   name: "",
 
-  {
-    name: "",
+  //   image: "",
+  // },
 
-    image: "",
-  },
+  // {
+  //   name: "",
 
-  {
-    name: "",
-
-    image: "",
-  },
+  //   image: "",
+  // },
 ];

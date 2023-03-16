@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ContentWrapper } from "../components/ContentWrapper";
-import { COOKIES, FIGURA } from "../images/Inventory";
+import { COOKIES, MISC } from "../images/Inventory";
 
 const PanWrapper = styled.div`
   display: flex;
@@ -11,20 +11,12 @@ const PanWrapper = styled.div`
   padding: 20px 0;
 `;
 
-const ImageWrapper = styled.div`
-  cursor: pointer;
-`;
+const ImageWrapper = styled.div``;
 
 const PanImage = styled.img`
   width: 475px;
   height: 375px;
   border-radius: 20px;
-
-  &:hover,
-  :focus {
-    width: 655px;
-    height: 525px;
-  }
 
   @media only screen and (max-width: 1250px) {
     width: 425px;
@@ -62,6 +54,26 @@ const PanName = styled.p`
   }
 `;
 
+const Title = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  font-family: snell roundhand, cursive;
+  margin: 10px 0;
+  text-shadow: -1px 1px 10px #000;
+`;
+
+const TextWrapper = styled.div`
+  .responsive-text {
+    @media only screen and (max-width: 768px) {
+      font-size: 30px;
+      font-weight: 700;
+      padding: 20px 0;
+    }
+  }
+`;
+
 const Cookies = () => {
   return (
     <>
@@ -77,10 +89,10 @@ const Cookies = () => {
   );
 };
 
-const Figura = () => {
+const Misc = () => {
   return (
     <>
-      {FIGURA.map((item) => {
+      {MISC.map((item) => {
         return (
           <ImageWrapper>
             <PanImage src={item.image} alt={item.name} />
@@ -92,13 +104,33 @@ const Figura = () => {
   );
 };
 
+// const Figura = () => {
+//   return (
+//     <>
+//       {FIGURA.map((item) => {
+//         return (
+//           <ImageWrapper>
+//             <PanImage src={item.image} alt={item.name} />
+//             <PanName>{item.name}</PanName>
+//           </ImageWrapper>
+//         );
+//       })}
+//     </>
+//   );
+// };
+
 const Pan = () => {
   return (
     <ContentWrapper>
+      <Title>Pan</Title>
       <PanWrapper>
         <Cookies />
-        <Figura />
+        <Misc />
+        {/* <Figura /> */}
       </PanWrapper>
+      <TextWrapper>
+        <Title className="responsive-text">More photos coming soon</Title>
+      </TextWrapper>
     </ContentWrapper>
   );
 };

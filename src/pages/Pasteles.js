@@ -34,20 +34,12 @@ const CakeWrapper = styled.div`
   padding: 20px 0;
 `;
 
-const ImageWrapper = styled.div`
-  cursor: pointer;
-`;
+const ImageWrapper = styled.div``;
 
 const PanImage = styled.img`
   width: 475px;
   height: 375px;
   border-radius: 20px;
-
-  &:hover,
-  :focus {
-    width: 655px;
-    height: 525px;
-  }
 
   @media only screen and (max-width: 1250px) {
     width: 425px;
