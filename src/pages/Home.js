@@ -449,6 +449,7 @@ const ContactUs = () => {
 const Home = () => {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef();
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -458,7 +459,9 @@ const Home = () => {
       });
     });
     observer.observe(domRef.current);
-    return () => observer.unobserve(domRef.current);
+    return () => {
+      if (domRef.current) observer.unobserve(domRef.current);
+    };
   }, []);
 
   return (
