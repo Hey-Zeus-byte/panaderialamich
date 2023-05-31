@@ -133,6 +133,8 @@ const AboutUsWrapper = styled.div`
   background-image: url(${lobby});
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: contain;
+  background-position: 50% 50%;
   background-blend-mode: multiply;
   animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
@@ -210,10 +212,10 @@ const AboutUsContainer = styled.div`
 
     font-family: Arial;
     animation: fadeIn 8s;
-    -webkit-animation: fadeIn 8s;
-    -moz-animation: fadeIn 8s;
-    -o-animation: fadeIn 8s;
-    -ms-animation: fadeIn 8s;
+    -webkit-animation: fadeIn 8s; // 5s
+    -moz-animation: fadeIn 8s; // 5s
+    -o-animation: fadeIn 8s; // 5s
+    -ms-animation: fadeIn 8s; // 5s
 
     @keyframes fadeIn {
       0% {
