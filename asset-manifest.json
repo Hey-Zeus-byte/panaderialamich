@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.2b7412cd.js",
+    "main.css": "/static/css/main.d98916ac.css",
+    "main.js": "/static/js/main.1a3a1961.js",
     "static/media/flan.jpeg": "/static/media/flan.e880b949eaddcdf75819.jpeg",
     "static/media/treslecheswfruit.jpeg": "/static/media/treslecheswfruit.e961b85eb4f392f648cc.jpeg",
     "static/media/tresleches.jpg": "/static/media/tresleches.8db634f32e2e0fa0981d.jpg",
     "static/media/coffeecake.jpg": "/static/media/coffeecake.1fa662237aa8e43f5768.jpg",
     "static/media/lobby.jpg": "/static/media/lobby.de8a039c1ba359cae112.jpg",
     "static/media/happyface.png": "/static/media/happyface.ecc9946e3911e25f961a.png",
+    "static/media/fruit-baskets.jpg": "/static/media/fruit-baskets.31aba5f7dfa51ae870f4.jpg",
     "static/media/apple_emp.jpg": "/static/media/apple_emp.8c6f60a81f988aac4282.jpg",
     "static/media/pudin2.jpg": "/static/media/pudin2.eeb1fd4e445996086dfc.jpg",
+    "static/media/coffee-mothers-day-cake.jpg": "/static/media/coffee-mothers-day-cake.5fe02af3c44a30325116.jpg",
     "static/media/display2.jpg": "/static/media/display2.781dbf08221c8ebb008d.jpg",
     "static/media/display1.jpg": "/static/media/display1.3ad1f5e382b82e8f90a4.jpg",
+    "static/media/vanilla-mothers-day-cake.jpg": "/static/media/vanilla-mothers-day-cake.19ef1d92c38e3266dfe9.jpg",
     "static/media/cakeincup.jpeg": "/static/media/cakeincup.edfc6459853d2bf1ae66.jpeg",
     "static/media/overseejello.jpeg": "/static/media/overseejello.d5bb1865a574e6284185.jpeg",
     "static/media/chocochipcookie.jpeg": "/static/media/chocochipcookie.8a5ce8fecb5e2d7a9a83.jpeg",
@@ -20,11 +23,11 @@
     "static/media/pinkcookie.jpeg": "/static/media/pinkcookie.8f7706116c91030746b1.jpeg",
     "static/media/logo.png": "/static/media/logo.9b0a46e63b25dfb2da47.png",
     "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.2b7412cd.js.map": "/static/js/main.2b7412cd.js.map"
+    "main.d98916ac.css.map": "/static/css/main.d98916ac.css.map",
+    "main.1a3a1961.js.map": "/static/js/main.1a3a1961.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.2b7412cd.js"
+    "static/css/main.d98916ac.css",
+    "static/js/main.1a3a1961.js"
   ]
 }
