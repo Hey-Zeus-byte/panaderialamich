@@ -18,6 +18,10 @@ const PanImage = styled.img`
   height: 375px;
   border-radius: 20px;
 
+  &:focus {
+    outline: 2px solid blue;
+  }
+
   @media only screen and (max-width: 1250px) {
     width: 425px;
     height: 325px;
@@ -80,7 +84,7 @@ const Cookies = () => {
       {COOKIES.map((cookie) => {
         return (
           <ImageWrapper>
-            <PanImage src={cookie.image} alt={cookie.name} />
+            <PanImage src={cookie.image} alt={cookie.name} tabIndex="0" />
             <PanName>{cookie.name}</PanName>
           </ImageWrapper>
         );
