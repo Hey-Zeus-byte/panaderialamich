@@ -4,6 +4,8 @@ import { ContentWrapper } from "../components/ContentWrapper";
 import tresleches from "../images/cakes/tresleches.jpg";
 import treslecheswfruit from "../images/cakes/treslecheswfruit.jpeg";
 import coffeecake from "../images/cakes/coffeecake.jpg";
+import coffeeMothersDay from "../images/cakes/coffee-mothers-day-cake.jpg";
+import vanillaMothersDay from "../images/cakes/vanilla-mothers-day-cake.jpg";
 import flan from "../images/cakes/flan.jpeg";
 
 const CAKES = [
@@ -19,7 +21,14 @@ const CAKES = [
     name: "Vanilla Tres Leches with Fruit",
     image: treslecheswfruit,
   },
-
+  {
+    name: "Coffee Mother's Day",
+    image: coffeeMothersDay,
+  },
+  {
+    name: "Vanilla Mother's Day",
+    image: vanillaMothersDay,
+  },
   {
     name: "Flan",
     image: flan,
@@ -36,10 +45,11 @@ const CakeWrapper = styled.div`
 
 const ImageWrapper = styled.div``;
 
-const PanImage = styled.img`
+const CakeImage = styled.img`
   width: 475px;
   height: 375px;
   border-radius: 20px;
+  object-fit: cover;
 
   @media only screen and (max-width: 1250px) {
     width: 425px;
@@ -105,7 +115,7 @@ const Pasteles = () => {
         {CAKES.map((cake) => {
           return (
             <ImageWrapper>
-              <PanImage src={cake.image} alt={cake.name}></PanImage>
+              <CakeImage src={cake.image} alt={cake.name}></CakeImage>
               <PanName>{cake.name}</PanName>
             </ImageWrapper>
           );

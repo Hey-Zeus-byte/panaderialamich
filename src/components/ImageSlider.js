@@ -5,6 +5,7 @@ import display2 from "../images/miscellaneous/display2.jpg";
 import overseejello from "../images/miscellaneous/overseejello.jpeg";
 import cakeincup from "../images/miscellaneous/cakeincup.jpeg";
 import fruitcake from "../images/miscellaneous/fruitcake.jpeg";
+import fruitBaskets from "../images/miscellaneous/fruit-baskets.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -29,6 +30,10 @@ const slides = [
   {
     url: fruitcake,
     title: "fruitcake",
+  },
+  {
+    url: fruitBaskets,
+    title: "fruit-baskets",
   },
 ];
 
