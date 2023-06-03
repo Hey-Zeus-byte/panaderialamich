@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.d98916ac.css",
-    "main.js": "/static/js/main.d1c8f467.js",
+    "main.js": "/static/js/main.dba5e49e.js",
     "static/media/flan.jpeg": "/static/media/flan.e880b949eaddcdf75819.jpeg",
     "static/media/treslecheswfruit.jpeg": "/static/media/treslecheswfruit.e961b85eb4f392f648cc.jpeg",
     "static/media/tresleches.jpg": "/static/media/tresleches.8db634f32e2e0fa0981d.jpg",
     "static/media/coffeecake.jpg": "/static/media/coffeecake.1fa662237aa8e43f5768.jpg",
     "static/media/lobby.jpg": "/static/media/lobby.de8a039c1ba359cae112.jpg",
     "static/media/happyface.png": "/static/media/happyface.ecc9946e3911e25f961a.png",
+    "static/media/pig.png": "/static/media/pig.020d7224496f256245cf.png",
     "static/media/fruit-baskets.jpg": "/static/media/fruit-baskets.31aba5f7dfa51ae870f4.jpg",
     "static/media/apple_emp.jpg": "/static/media/apple_emp.8c6f60a81f988aac4282.jpg",
     "static/media/pudin2.jpg": "/static/media/pudin2.eeb1fd4e445996086dfc.jpg",
@@ -24,10 +25,10 @@
     "static/media/logo.png": "/static/media/logo.9b0a46e63b25dfb2da47.png",
     "index.html": "/index.html",
     "main.d98916ac.css.map": "/static/css/main.d98916ac.css.map",
-    "main.d1c8f467.js.map": "/static/js/main.d1c8f467.js.map"
+    "main.dba5e49e.js.map": "/static/js/main.dba5e49e.js.map"
   },
   "entrypoints": [
     "static/css/main.d98916ac.css",
-    "static/js/main.d1c8f467.js"
+    "static/js/main.dba5e49e.js"
   ]
 }
