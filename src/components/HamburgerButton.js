@@ -49,7 +49,7 @@ export const HamburgerButton = ({ onToggle }) => {
         <div />
         <div />
       </HamburgerButtonWrapper>
-      <MobileNavMenu open={open} />
+      <MobileNavMenu open={open} setOpen={setOpen} />
     </>
   );
 };

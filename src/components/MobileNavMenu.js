@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -53,13 +53,42 @@ const NavWrapper = styled.div`
   z-index: 1;
 `;
 
-const MobileNavMenu = ({ open }) => {
+const MobileNavMenu = ({ open, setOpen }) => {
+  const backgroundRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        backgroundRef.current &&
+        !backgroundRef.current.contains(event.target)
+      ) {
+        setOpen(!open);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleLinkClick = () => {
+    setOpen(!open);
+  };
+
   return (
     <MobileNavWrapper open={open}>
       <NavWrapper open={open}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/pan">Pan</NavLink>
-        <NavLink to="/pasteles">Pasteles</NavLink>
+        <NavLink to="/" onClick={handleLinkClick}>
+          Home
+        </NavLink>
+        <NavLink to="/pan" onClick={handleLinkClick}>
+          Pan
+        </NavLink>
+        <NavLink to="/pasteles" onClick={handleLinkClick}>
+          Pasteles
+        </NavLink>
       </NavWrapper>
     </MobileNavWrapper>
   );
