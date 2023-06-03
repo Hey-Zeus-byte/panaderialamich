@@ -5,6 +5,9 @@ import display2 from "../images/miscellaneous/display2.jpg";
 import overseejello from "../images/miscellaneous/overseejello.jpeg";
 import cakeincup from "../images/miscellaneous/cakeincup.jpeg";
 import fruitcake from "../images/miscellaneous/fruitcake.jpeg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const slides = [
   {
@@ -30,8 +33,8 @@ const slides = [
 ];
 
 const ImageContainer = styled.div`
-  height: "100%";
-  position: "relative";
+  height: 100%;
+  position: relative;
   cursor: pointer;
 `;
 
@@ -65,6 +68,23 @@ const Image = styled.div`
   }
 `;
 
+const ArrowIcon = styled(FontAwesomeIcon)`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: #ffffff;
+  cursor: pointer;
+`;
+
+const LeftArrowIcon = styled(ArrowIcon)`
+  left: 24px;
+`;
+
+const RightArrowIcon = styled(ArrowIcon)`
+  right: 24px;
+`;
+
 const ImageSlider = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
 
@@ -74,11 +94,18 @@ const ImageSlider = () => {
     setCurrentIdx(newIndex);
   };
 
+  const goToPrevious = () => {
+    const isFirstSlide = currentIdx === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIdx - 1;
+    setCurrentIdx(newIndex);
+  };
+
   return (
     <ImageContainer>
-      <Image current={currentIdx} onClick={goToNext} />
+      <LeftArrowIcon icon={faArrowLeft} onClick={goToPrevious} />
+      <Image current={currentIdx} />
+      <RightArrowIcon icon={faArrowRight} onClick={goToNext} />
     </ImageContainer>
   );
 };
-
 export default ImageSlider;
