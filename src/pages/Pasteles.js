@@ -51,6 +51,10 @@ const CakeImage = styled.img`
   border-radius: 20px;
   object-fit: cover;
 
+  &:focus {
+    outline: 2px solid blue;
+  }
+
   @media only screen and (max-width: 1250px) {
     width: 425px;
     height: 325px;
@@ -67,7 +71,7 @@ const CakeImage = styled.img`
   }
 `;
 
-const PanName = styled.p`
+const CakeName = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,8 +119,8 @@ const Pasteles = () => {
         {CAKES.map((cake) => {
           return (
             <ImageWrapper>
-              <CakeImage src={cake.image} alt={cake.name}></CakeImage>
-              <PanName>{cake.name}</PanName>
+              <CakeImage src={cake.image} alt={cake.name} tabIndex="0" />
+              <CakeName>{cake.name}</CakeName>
             </ImageWrapper>
           );
         })}
