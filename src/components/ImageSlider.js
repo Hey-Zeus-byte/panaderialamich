@@ -84,10 +84,16 @@ const ArrowIcon = styled(FontAwesomeIcon)`
 
 const LeftArrowIcon = styled(ArrowIcon)`
   left: 24px;
+  &:focus {
+    outline: 2px solid blue;
+  }
 `;
 
 const RightArrowIcon = styled(ArrowIcon)`
   right: 24px;
+  &:focus {
+    outline: 2px solid blue;
+  }
 `;
 
 const ImageSlider = () => {
@@ -105,11 +111,36 @@ const ImageSlider = () => {
     setCurrentIdx(newIndex);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      if (e.target === leftArrowRef.current) {
+        goToPrevious();
+      } else if (e.target === rightArrowRef.current) {
+        goToNext();
+      }
+    }
+  };
+
+  const leftArrowRef = React.createRef();
+  const rightArrowRef = React.createRef();
+
   return (
     <ImageContainer>
-      <LeftArrowIcon icon={faArrowLeft} onClick={goToPrevious} />
+      <LeftArrowIcon
+        icon={faArrowLeft}
+        onClick={goToPrevious}
+        tabIndex="0"
+        onKeyDown={handleKeyDown}
+        ref={leftArrowRef}
+      />
       <Image current={currentIdx} />
-      <RightArrowIcon icon={faArrowRight} onClick={goToNext} />
+      <RightArrowIcon
+        icon={faArrowRight}
+        onClick={goToNext}
+        tabIndex="0"
+        onKeyDown={handleKeyDown}
+        ref={rightArrowRef}
+      />
     </ImageContainer>
   );
 };
