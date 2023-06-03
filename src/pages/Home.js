@@ -450,6 +450,8 @@ const ContactUs = () => {
 
 const Home = () => {
   const [isVisible, setVisible] = useState(false);
+  const [movingNumber, setMovingNumber] = useState(0);
+
   const domRef = useRef();
 
   useEffect(() => {
@@ -466,6 +468,27 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    let interval;
+    if (isVisible) {
+      let startValue = 0;
+      const endValue = 70;
+      const duration = 3000;
+      const increment = Math.ceil((endValue - startValue) / (duration / 10));
+
+      interval = setInterval(() => {
+        startValue += increment;
+        if (startValue >= endValue) {
+          startValue = endValue;
+          clearInterval(interval);
+        }
+        setMovingNumber(Math.min(startValue, endValue));
+      }, 10);
+    }
+
+    return () => clearInterval(interval);
+  }, [isVisible]);
+
   return (
     <ContentWrapper>
       <AboutUs />
@@ -480,7 +503,7 @@ const Home = () => {
           className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
           ref={domRef}
         >
-          70
+          {movingNumber}
         </MovingNumber>
         <SlidingText
           className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
