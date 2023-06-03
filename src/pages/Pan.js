@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ContentWrapper } from "../components/ContentWrapper";
 import { COOKIES, MISC } from "../images/Inventory";
+import { FaSearch, FaTimes } from "@fortawesome/free-solid-svg-icons";
 
 const PanWrapper = styled.div`
   display: flex;
@@ -12,6 +13,12 @@ const PanWrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div``;
+const Hero = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const PanImage = styled.img`
   width: 475px;
@@ -68,6 +75,26 @@ const Title = styled.p`
   text-shadow: -1px 1px 10px #000;
 `;
 
+const PanSearch = styled.input`
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin: 0 150px;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0 70px;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+  }
+`;
+
 const TextWrapper = styled.div`
   .responsive-text {
     @media only screen and (max-width: 768px) {
@@ -78,12 +105,12 @@ const TextWrapper = styled.div`
   }
 `;
 
-const Cookies = () => {
+const Cookies = ({ cookies }) => {
   return (
     <>
-      {COOKIES.map((cookie) => {
+      {cookies.map((cookie) => {
         return (
-          <ImageWrapper>
+          <ImageWrapper key={cookie.name}>
             <PanImage src={cookie.image} alt={cookie.name} tabIndex="0" />
             <PanName>{cookie.name}</PanName>
           </ImageWrapper>
@@ -93,12 +120,12 @@ const Cookies = () => {
   );
 };
 
-const Misc = () => {
+const Misc = ({ misc }) => {
   return (
     <>
-      {MISC.map((item) => {
+      {misc.map((item) => {
         return (
-          <ImageWrapper>
+          <ImageWrapper key={item.name}>
             <PanImage src={item.image} alt={item.name} />
             <PanName>{item.name}</PanName>
           </ImageWrapper>
@@ -124,12 +151,31 @@ const Misc = () => {
 // };
 
 const Pan = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredCookies = COOKIES.filter((cookie) =>
+    cookie.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const filteredMisc = MISC.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <ContentWrapper>
-      <Title>Pan</Title>
+      <Hero>
+        <Title>Pan</Title>
+        <PanSearch
+          type="text"
+          placeholder="Search Pan..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          aria-label="Search"
+        />
+      </Hero>
       <PanWrapper>
-        <Cookies />
-        <Misc />
+        <Cookies cookies={filteredCookies} />
+        <Misc misc={filteredMisc} />
         {/* <Figura /> */}
       </PanWrapper>
       <TextWrapper>

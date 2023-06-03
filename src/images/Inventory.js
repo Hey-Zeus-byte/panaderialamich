@@ -3,15 +3,15 @@ import happyface from "../images/cookies/happyface.png";
 import chocochipcookie from "../images/cookies/chocochipcookie.jpeg";
 // import chococupcake from "../images/miscellaneous/chococupcake.jpeg";
 import crownstack from "../images/cookies/crownstack.jpeg";
-// import pig from "../images/miscellaneous/pig.png";
+import pig from "../images/miscellaneous/pig.png";
 import pudin from "../images/miscellaneous/pudin2.jpg";
 import apple_emp from "../images/miscellaneous/apple_emp.jpg";
 
 export const COOKIES = [
   {
     name: "Espejo",
-
     image: pinkcookie,
+    // listOfNames: ["cookie", " pink cookie", espejo], Adding this for better search results
   },
 
   {
@@ -30,6 +30,11 @@ export const COOKIES = [
     name: "Coricos",
 
     image: crownstack,
+  },
+  {
+    name: "Puerquito",
+
+    image: pig,
   },
 
   // {
