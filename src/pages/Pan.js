@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import HeroSection from "./Pan Components/HeroSection";
 import styled from "styled-components";
 import { ContentWrapper } from "../components/ContentWrapper";
 import { COOKIES, MISC } from "../images/Inventory";
-import { FaSearch, FaTimes } from "@fortawesome/free-solid-svg-icons";
 
 const PanWrapper = styled.div`
   display: flex;
@@ -164,6 +164,7 @@ const Pan = () => {
   return (
     <ContentWrapper>
       <Hero>
+        <HeroSection />
         <Title>Pan</Title>
         <PanSearch
           type="text"
