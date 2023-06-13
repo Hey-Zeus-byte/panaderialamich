@@ -9,7 +9,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: #f6f6f6;
+  background-color: #fff;
   left: 0;
   bottom: 0;
   width: auto;
