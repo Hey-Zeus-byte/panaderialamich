@@ -71,7 +71,7 @@ const MobileNavMenu = ({ open, setOpen }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [open, setOpen]);
 
   const handleLinkClick = () => {
     setOpen(!open);

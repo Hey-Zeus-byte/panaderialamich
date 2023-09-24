@@ -4,6 +4,7 @@ import styled from "styled-components";
 import lobby from "../images/miscellaneous/lobby.jpg";
 import { openGoogleMaps } from "../components/Map";
 import ImageSlider from "../components/ImageSlider";
+import HeroSection from "./PanComponents/HeroSection";
 
 const Text = styled.p`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -49,11 +50,8 @@ const RedText = styled(Text)`
 `;
 
 const WelcomeCon = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  line-height: 10px;
+  display: block;
+  text-align: center;
   outline: 2px black;
   text-shadow: -1px 1px 10px #000, 1px 1px 2px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
@@ -62,64 +60,65 @@ const WelcomeCon = styled.div`
 const Welcome = styled.h1`
   color: #b8860b; // Dark Goldenrod
   font-family: snell roundhand, cursive;
-  font-size: 180px;
+  font-size: 230px;
+  overflow: hidden;
 
-  animation: fadeIn 7s;
-  -webkit-animation: fadeIn 7s;
-  -moz-animation: fadeIn 7s;
-  -o-animation: fadeIn 7s;
-  -ms-animation: fadeIn 7s;
+  span {
+    opacity: 0;
+  }
 
-  @keyframes fadeIn {
+  span:nth-child(1) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards;
+  }
+  span:nth-child(2) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 1.4s forwards;
+  }
+  span:nth-child(3) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 1.6s forwards;
+  }
+  span:nth-child(4) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 1.8s forwards;
+  }
+  span:nth-child(5) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+  }
+  span:nth-child(6) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2.2s forwards;
+  }
+  span:nth-child(7) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2.4s forwards;
+  }
+  span:nth-child(8) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2.6s forwards;
+  }
+  span:nth-child(9) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2.8s forwards;
+  }
+  span:nth-child(10) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 3s forwards;
+  }
+  span:nth-child(11) {
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 3.2s forwards;
+  }
+
+  @keyframes slideIn {
     0% {
+      transform: translateY(-100%);
       opacity: 0;
     }
+
     100% {
+      transform: translateY(0);
       opacity: 1;
     }
   }
 
-  @-moz-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-o-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
   @media only screen and (max-width: 1250px) {
-    font-size: 140px;
+    font-size: 150px;
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: 90px;
+    font-size: 95px;
   }
 
   @media only screen and (max-width: 500px) {
@@ -128,7 +127,7 @@ const Welcome = styled.h1`
 `;
 
 const AboutUsWrapper = styled.div`
-  height: 80vh;
+  height: 60vh;
   background-color: #b9d5d9;
   background-image: url(${lobby});
   background-repeat: no-repeat;
@@ -136,57 +135,6 @@ const AboutUsWrapper = styled.div`
   object-fit: contain;
   background-position: 50% 50%;
   background-blend-mode: multiply;
-  animation: fadeIn 5s;
-  -webkit-animation: fadeIn 5s;
-  -moz-animation: fadeIn 5s;
-  -o-animation: fadeIn 5s;
-  -ms-animation: fadeIn 5s;
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-moz-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-o-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
   padding-top: 100px;
   padding-bottom: 100px;
 `;
@@ -196,11 +144,12 @@ const AboutUsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 80px;
+  padding: 0 50px;
   gap: 20px;
+  overflow: hidden;
 
   .about-us {
-    font-size: 30px;
+    font-size: 46px;
     text-align: center;
     line-height: 50px;
     font-weight: 800;
@@ -209,68 +158,31 @@ const AboutUsContainer = styled.div`
     text-shadow: -1px 1px 10px #000, 1px 1px 2px #000, 1px -1px 0 #000,
       -1px -1px 0 #000;
     cursor: pointer;
+    opacity: 0;
+    font-family: Inter;
+    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 4s forwards;
 
-    font-family: Arial;
-    animation: fadeIn 8s;
-    -webkit-animation: fadeIn 8s; // 5s
-    -moz-animation: fadeIn 8s; // 5s
-    -o-animation: fadeIn 8s; // 5s
-    -ms-animation: fadeIn 8s; // 5s
-
-    @keyframes fadeIn {
+    @keyframes slideIn {
       0% {
+        transform: translateY(-100%);
         opacity: 0;
       }
-      100% {
-        opacity: 1;
-      }
-    }
 
-    @-moz-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
       100% {
-        opacity: 1;
-      }
-    }
-
-    @-webkit-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @-o-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @-ms-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
+        transform: translateY(0);
         opacity: 1;
       }
     }
 
     @media only screen and (max-width: 1250px) {
-      font-size: 22px;
+      font-size: 32px;
     }
 
     @media only screen and (max-width: 768px) {
-      font-size: 18px;
+      font-size: 24px;
     }
     @media only screen and (max-width: 450px) {
-      font-size: 12px;
+      font-size: 20px;
     }
   }
 `;
@@ -398,7 +310,11 @@ const AboutUs = () => {
   return (
     <AboutUsWrapper>
       <WelcomeCon>
-        <Welcome>Bienvenidos</Welcome>
+        <Welcome>
+          {"Bienvenidos".split("").map((char, index) => (
+            <span key={index}>{char}</span>
+          ))}
+        </Welcome>
       </WelcomeCon>
       <AboutUsContainer>
         {translation ? (
@@ -512,6 +428,7 @@ const Home = () => {
           piezas de pan!
         </SlidingText>
       </UpperContainer>
+      <HeroSection />
       <MiddleContainer>
         <ContactUs />
         <div>

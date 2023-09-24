@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import HeroSection from "./Pan Components/HeroSection";
 import styled from "styled-components";
 import { ContentWrapper } from "../components/ContentWrapper";
 import { COOKIES, MISC } from "../images/Inventory";
@@ -164,7 +163,6 @@ const Pan = () => {
   return (
     <ContentWrapper>
       <Hero>
-        <HeroSection />
         <Title>Pan</Title>
         <PanSearch
           type="text"

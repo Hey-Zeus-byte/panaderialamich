@@ -4,15 +4,22 @@ import chocolatechip from "../../images/cookies/chocochipcookie.jpeg";
 import pinkCookie from "../../images/cookies/pinkcookie.jpeg";
 import happyFace from "../../images/cookies/happyface.png";
 
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 10px;
+const HeroGridContainer = styled.div`
+  display: flex;
+  margin: 0 80px;
+  gap: 10px;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    margin: 0 20px;
   }
+`;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
 `;
 
 const GridItem = styled.div`
@@ -30,13 +37,10 @@ const PanImage = styled.img`
 
 const HeroSection = () => {
   return (
-    <>
+    <HeroGridContainer>
       <GridContainer>
         <GridItem style={{ gridColumn: "span 2", gridRow: "1" }}>
           <PanImage src={chocolatechip} alt="Chocolate chip cookie" />
-        </GridItem>
-        <GridItem style={{ gridColumn: "span 2", gridRow: "2" }}>
-          <PanImage src={pinkCookie} alt="pink cookie" />
         </GridItem>
         <GridItem style={{ gridColumn: "1", gridRow: "2" }}>
           <PanImage src={happyFace} alt="happy face cookie" />
@@ -44,14 +48,19 @@ const HeroSection = () => {
         <GridItem style={{ gridColumn: "2", gridRow: "2" }}>
           <PanImage src={chocolatechip} alt="Chocolate chip cookie" />
         </GridItem>
-        <GridItem style={{ gridColumn: "3", gridRow: "1 / span 2" }}>
+      </GridContainer>
+      <GridContainer>
+        <GridItem style={{ gridColumn: "1", gridRow: "1" }}>
           <PanImage src={pinkCookie} alt="pink cookie" />
         </GridItem>
-        <GridItem style={{ gridColumn: "3", gridRow: "1 / span 2" }}>
+        <GridItem style={{ gridColumn: "2", gridRow: "1" }}>
+          <PanImage src={pinkCookie} alt="pink cookie" />
+        </GridItem>
+        <GridItem style={{ gridColumn: "span 2", gridRow: "2" }}>
           <PanImage src={happyFace} alt="happy face cookie" />
         </GridItem>
       </GridContainer>
-    </>
+    </HeroGridContainer>
   );
 };
 
