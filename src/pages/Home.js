@@ -4,7 +4,7 @@ import styled from "styled-components";
 import lobby from "../images/miscellaneous/lobby.jpg";
 import { openGoogleMaps } from "../components/Map";
 import ImageSlider from "../components/ImageSlider";
-import HeroSection from "./PanComponents/HeroSection";
+// import HeroSection from "./PanComponents/HeroSection";
 
 const Text = styled.p`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -50,21 +50,35 @@ const RedText = styled(Text)`
 `;
 
 const WelcomeCon = styled.div`
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   outline: 2px black;
-  text-shadow: -1px 1px 10px #000, 1px 1px 2px #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
+  text-shadow: -2px 2px 20px #000, 2px 2px 4px #000, 2px -2px 0 #000,
+    -2px -2px 0 #000;
+  transform: translateY(-50px);
+  border-radius: 30%;
+  height: 30vh;
 `;
 
 const Welcome = styled.h1`
-  color: #b8860b; // Dark Goldenrod
+  color: goldenrod;
   font-family: snell roundhand, cursive;
   font-size: 230px;
   overflow: hidden;
+  /* background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0) 100%
+  ); */
 
   span {
     opacity: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 
   span:nth-child(1) {
@@ -147,6 +161,7 @@ const AboutUsContainer = styled.div`
   padding: 0 50px;
   gap: 20px;
   overflow: hidden;
+  margin-top: -50px;
 
   .about-us {
     font-size: 46px;
@@ -155,7 +170,7 @@ const AboutUsContainer = styled.div`
     font-weight: 800;
     margin: 0;
     color: #f0fff0;
-    text-shadow: -1px 1px 10px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    text-shadow: -3px 3px 30px #000, 3px 3px 4px #000, 2px -2px 0 #000,
       -1px -1px 0 #000;
     cursor: pointer;
     opacity: 0;
@@ -180,9 +195,11 @@ const AboutUsContainer = styled.div`
 
     @media only screen and (max-width: 768px) {
       font-size: 24px;
+      line-height: 30px;
     }
     @media only screen and (max-width: 450px) {
       font-size: 20px;
+      line-height: 26px;
     }
   }
 `;
@@ -379,8 +396,11 @@ const Home = () => {
       });
     });
     observer.observe(domRef.current);
+
+    const currentDomRef = domRef.current;
+
     return () => {
-      if (domRef.current) observer.unobserve(domRef.current);
+      if (currentDomRef) observer.unobserve(currentDomRef);
     };
   }, []);
 
@@ -428,7 +448,7 @@ const Home = () => {
           piezas de pan!
         </SlidingText>
       </UpperContainer>
-      <HeroSection />
+      {/* <HeroSection /> */}
       <MiddleContainer>
         <ContactUs />
         <div>
