@@ -56,7 +56,7 @@ const WelcomeCon = styled.div`
   outline: 2px black;
   text-shadow: -2px 2px 20px #000, 2px 2px 4px #000, 2px -2px 0 #000,
     -2px -2px 0 #000;
-  transform: translateY(-50px);
+  /* transform: translateY(-50px); */
   border-radius: 30%;
   height: 30vh;
 `;
@@ -74,11 +74,11 @@ const Welcome = styled.h1`
 
   span {
     opacity: 0;
-    background: radial-gradient(
+    /* background: radial-gradient(
       circle at center,
       rgba(0, 0, 0, 0.5) 60%,
       rgba(0, 0, 0, 0) 100%
-    );
+    ); */
   }
 
   span:nth-child(1) {
