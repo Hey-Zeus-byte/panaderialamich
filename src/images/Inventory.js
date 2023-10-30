@@ -6,6 +6,11 @@ import crownstack from "../images/cookies/crownstack.jpeg";
 import pig from "../images/miscellaneous/pig.png";
 import pudin from "../images/miscellaneous/pudin2.jpg";
 import apple_emp from "../images/miscellaneous/apple_emp.jpg";
+import cono from "../images/miscellaneous/Conos.jpg";
+import cuerno from "../images/figura/Cuernos.jpg";
+import elote from "../images/figura/Elotes.jpg";
+import mantecada from "../images/miscellaneous/Mantecadas.jpg";
+import yoyo from "../images/miscellaneous/Yoyos.jpg";
 
 export const COOKIES = [
   {
@@ -36,73 +41,19 @@ export const COOKIES = [
 
     image: pig,
   },
-
-  // {
-  //   name: "Payaso",
-
-  //   image: "",
-  // },
-
-  // {
-  //   name: "Almond Cookie",
-
-  //   image: "",
-  // },
 ];
 
 export const FIGURA = [
   {
     name: "Elote",
 
-    image: "",
+    image: elote,
   },
 
   {
     name: "Cuerno",
 
-    image: "",
-  },
-
-  {
-    name: "Tronco",
-
-    image: "",
-  },
-
-  {
-    name: "Hoja",
-
-    image: "",
-  },
-
-  {
-    name: "Omares",
-
-    image: "",
-  },
-
-  {
-    name: "Puros",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
+    image: cuerno,
   },
 ];
 
@@ -140,79 +91,7 @@ export const CONCHAS = [
   },
 ];
 
-export const EMPANADAS = [
-  {
-    name: "Calabaza",
-
-    image: "",
-  },
-
-  {
-    name: "Sweet Potatoe",
-
-    image: "",
-  },
-
-  {
-    name: "Fresa",
-
-    image: "",
-  },
-
-  {
-    name: "Vienna Creme",
-
-    image: "",
-  },
-
-  {
-    name: "Pina",
-
-    image: "",
-  },
-
-  {
-    name: "Manzana",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
-  },
-
-  {
-    name: "",
-
-    image: "",
-  },
-];
+export const EMPANADAS = [];
 
 export const MISC = [
   {
@@ -226,27 +105,21 @@ export const MISC = [
 
     image: apple_emp,
   },
-  // {
-  //   name: "",
+  {
+    name: "Mantecada",
 
-  //   image: "",
-  // },
+    image: mantecada,
+  },
 
-  // {
-  //   name: "",
+  {
+    name: "Yoyo",
 
-  //   image: "",
-  // },
+    image: yoyo,
+  },
 
-  // {
-  //   name: "",
+  {
+    name: "Cono",
 
-  //   image: "",
-  // },
-
-  // {
-  //   name: "",
-
-  //   image: "",
-  // },
+    image: cono,
+  },
 ];

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ContentWrapper } from "../components/ContentWrapper";
-import { COOKIES, MISC } from "../images/Inventory";
+import { COOKIES, MISC, FIGURA } from "../images/Inventory";
 
 const PanWrapper = styled.div`
   display: flex;
@@ -134,20 +134,20 @@ const Misc = ({ misc }) => {
   );
 };
 
-// const Figura = () => {
-//   return (
-//     <>
-//       {FIGURA.map((item) => {
-//         return (
-//           <ImageWrapper>
-//             <PanImage src={item.image} alt={item.name} />
-//             <PanName>{item.name}</PanName>
-//           </ImageWrapper>
-//         );
-//       })}
-//     </>
-//   );
-// };
+const Figura = ({ figura }) => {
+  return (
+    <>
+      {figura.map((figura) => {
+        return (
+          <ImageWrapper>
+            <PanImage src={figura.image} alt={figura.name} />
+            <PanName>{figura.name}</PanName>
+          </ImageWrapper>
+        );
+      })}
+    </>
+  );
+};
 
 const Pan = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -158,6 +158,10 @@ const Pan = () => {
 
   const filteredMisc = MISC.filter((item) =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const filteredFigura = FIGURA.filter((figura) =>
+    figura.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -174,8 +178,8 @@ const Pan = () => {
       </Hero>
       <PanWrapper>
         <Cookies cookies={filteredCookies} />
+        <Figura figura={filteredFigura} />
         <Misc misc={filteredMisc} />
-        {/* <Figura /> */}
       </PanWrapper>
       <TextWrapper>
         <Title className="responsive-text">More photos coming soon</Title>
