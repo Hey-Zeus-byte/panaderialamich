@@ -36,6 +36,7 @@ const RedText = styled(Text)`
   font-size: 60px;
   margin: 5px;
   color: #8d2424;
+  text-align: center;
 
   @media only screen and (max-width: 1250px) {
     font-size: 40px;
@@ -132,6 +133,10 @@ const Welcome = styled.h1`
   @media only screen and (max-width: 428px) {
     font-size: 56px;
   }
+
+  @media only screen and (max-width: 375px) {
+    font-size: 46px;
+  }
 `;
 
 const AboutUsWrapper = styled.div`
@@ -145,6 +150,10 @@ const AboutUsWrapper = styled.div`
   background-blend-mode: multiply;
   padding-top: 100px;
   padding-bottom: 100px;
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 50px;
+  }
 `;
 
 const AboutUsContainer = styled.div`
@@ -163,6 +172,7 @@ const AboutUsContainer = styled.div`
     line-height: 50px;
     font-weight: 800;
     margin: 0;
+    margin-top: 30px;
     color: #f0fff0;
     text-shadow: -3px 3px 30px #000, 3px 3px 4px #000, 2px -2px 0 #000,
       -1px -1px 0 #000;
@@ -184,7 +194,7 @@ const AboutUsContainer = styled.div`
     }
 
     @media only screen and (max-width: 1250px) {
-      font-size: 32px;
+      font-size: 28px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -194,6 +204,12 @@ const AboutUsContainer = styled.div`
     @media only screen and (max-width: 450px) {
       font-size: 20px;
       line-height: 26px;
+      padding: 0;
+      margin-top: 0;
+    }
+    @media only screen and (max-width: 375px) {
+      font-size: 18px;
+      line-height: 22px;
     }
   }
 `;
@@ -247,6 +263,7 @@ const UpperContainer = styled.div`
 
 const SlidingText = styled.p`
   font-size: 80px;
+  text-align: center;
 
   @media only screen and (max-width: 1250px) {
     font-size: 60px;
@@ -310,7 +327,12 @@ const SliderStylesContainer = styled.div`
   }
 
   @media only screen and (max-width: 500px) {
-    width: 350px;
+    width: 325px;
+    height: 300px;
+  }
+
+  @media only screen and (max-width: 428px) {
+    width: 275px;
     height: 300px;
   }
 `;

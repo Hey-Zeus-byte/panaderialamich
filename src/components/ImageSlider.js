@@ -71,6 +71,10 @@ const Image = styled.div`
   @media only screen and (max-width: 475px) {
     width: 374px;
   }
+
+  @media only screen and (max-width: 400px) {
+    width: 275px;
+  }
 `;
 
 const ArrowIcon = styled(FontAwesomeIcon)`
