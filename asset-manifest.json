@@ -1,9 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.d98916ac.css",
-    "main.js": "/static/js/main.dba5e49e.js",
+    "main.js": "/static/js/main.3b509b2c.js",
+    "static/media/Cuernos.jpg": "/static/media/Cuernos.94d51542152a19358ed6.jpg",
+    "static/media/Yoyos.jpg": "/static/media/Yoyos.b09c4a55ae0396c98e4d.jpg",
     "static/media/flan.jpeg": "/static/media/flan.e880b949eaddcdf75819.jpeg",
+    "static/media/Mantecadas.jpg": "/static/media/Mantecadas.f819ebd266461d567be9.jpg",
+    "static/media/Conos.jpg": "/static/media/Conos.7b69cfa1b98f386cf3df.jpg",
     "static/media/treslecheswfruit.jpeg": "/static/media/treslecheswfruit.e961b85eb4f392f648cc.jpeg",
+    "static/media/Elotes.jpg": "/static/media/Elotes.9cef8994daae17d0bd3d.jpg",
     "static/media/tresleches.jpg": "/static/media/tresleches.8db634f32e2e0fa0981d.jpg",
     "static/media/coffeecake.jpg": "/static/media/coffeecake.1fa662237aa8e43f5768.jpg",
     "static/media/lobby.jpg": "/static/media/lobby.de8a039c1ba359cae112.jpg",
@@ -25,10 +30,10 @@
     "static/media/logo.png": "/static/media/logo.9b0a46e63b25dfb2da47.png",
     "index.html": "/index.html",
     "main.d98916ac.css.map": "/static/css/main.d98916ac.css.map",
-    "main.dba5e49e.js.map": "/static/js/main.dba5e49e.js.map"
+    "main.3b509b2c.js.map": "/static/js/main.3b509b2c.js.map"
   },
   "entrypoints": [
     "static/css/main.d98916ac.css",
-    "static/js/main.dba5e49e.js"
+    "static/js/main.3b509b2c.js"
   ]
 }
