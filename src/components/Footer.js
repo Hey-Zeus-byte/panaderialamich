@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
         <div>
           <CopyRightText>
-            Copyright © 2023 Panaderia La Michoacana or Its Affiliates. All
+            Copyright © 2024 Panaderia La Michoacana or Its Affiliates. All
             Rights Reserved.
           </CopyRightText>
         </div>
