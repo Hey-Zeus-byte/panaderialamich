@@ -56,7 +56,6 @@ const WelcomeCon = styled.div`
   outline: 2px black;
   text-shadow: -2px 2px 20px #000, 2px 2px 4px #000, 2px -2px 0 #000,
     -2px -2px 0 #000;
-  /* transform: translateY(-50px); */
   border-radius: 30%;
   height: 30vh;
 `;
@@ -66,19 +65,10 @@ const Welcome = styled.h1`
   font-family: snell roundhand, cursive;
   font-size: 230px;
   overflow: hidden;
-  /* background: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 0.5) 60%,
-    rgba(0, 0, 0, 0) 100%
-  ); */
 
   span {
     opacity: 0;
-    /* background: radial-gradient(
-      circle at center,
-      rgba(0, 0, 0, 0.5) 60%,
-      rgba(0, 0, 0, 0) 100%
-    ); */
+    overflow: hidden;
   }
 
   span:nth-child(1) {
@@ -137,6 +127,10 @@ const Welcome = styled.h1`
 
   @media only screen and (max-width: 500px) {
     font-size: 70px;
+  }
+
+  @media only screen and (max-width: 428px) {
+    font-size: 56px;
   }
 `;
 
