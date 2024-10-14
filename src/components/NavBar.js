@@ -9,7 +9,7 @@ const NavFlexWrapper = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  background-color: white;
+  background-color: #b4b4b4;
   padding: 5px 50px 10px;
   justify-content: space-between;
 
@@ -33,10 +33,10 @@ const NavList = styled.div`
 
 const NavLink = styled(Link)`
   text-decoration: none;
-  font-size: 30px;
+  font-size: 24px;
   color: black;
 
-  @media only screen and (max-width: 1050px) {
+  @media only screen and (max-width: 1024px) {
     font-size: 25px;
   }
 `;

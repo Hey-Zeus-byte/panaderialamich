@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import "../styles/index";
 import { ContentWrapper } from "./ContentWrapper";
 import { openGoogleMaps } from "./Map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,29 +44,31 @@ const InstagramLink = styled.a`
 
 const Footer = () => {
   return (
-    <ContentWrapper>
-      <Container>
-        <div>
-          <Information>Panaderia La Michoacana</Information>
-          <Address onClick={openGoogleMaps}>
-            3801 Yosemite Blvd, Suite B Modesto, CA 95357
-          </Address>
-          <Information>209-578-3599</Information>
-          <InstagramLink
-            href="https://www.instagram.com/lapanaderialamichoacana/"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faInstagram} size="2x" color="black" />
-          </InstagramLink>
-        </div>
-        <div>
-          <CopyRightText>
-            Copyright © 2024 Panaderia La Michoacana or Its Affiliates. All
-            Rights Reserved.
-          </CopyRightText>
-        </div>
-      </Container>
-    </ContentWrapper>
+    <div className="grid">
+      <ContentWrapper>
+        <Container>
+          <div>
+            <Information>Panaderia La Michoacana</Information>
+            <Address onClick={openGoogleMaps}>
+              3801 Yosemite Blvd, Suite B Modesto, CA 95357
+            </Address>
+            <Information>209-578-3599</Information>
+            <InstagramLink
+              href="https://www.instagram.com/lapanaderialamichoacana/"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faInstagram} size="2x" color="black" />
+            </InstagramLink>
+          </div>
+          <div>
+            <CopyRightText>
+              Copyright © 2024 Panaderia La Michoacana or Its Affiliates. All
+              Rights Reserved.
+            </CopyRightText>
+          </div>
+        </Container>
+      </ContentWrapper>
+    </div>
   );
 };
 
