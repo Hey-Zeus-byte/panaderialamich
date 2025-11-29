@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c8a76c77.css",
-    "main.js": "/static/js/main.d0e5ca0f.js",
+    "main.js": "/static/js/main.cdb8d990.js",
     "static/media/Cuernos.jpg": "/static/media/Cuernos.94d51542152a19358ed6.jpg",
     "static/media/Yoyos.jpg": "/static/media/Yoyos.b09c4a55ae0396c98e4d.jpg",
     "static/media/flan.jpeg": "/static/media/flan.e880b949eaddcdf75819.jpeg",
@@ -30,10 +30,10 @@
     "static/media/logo.png": "/static/media/logo.9b0a46e63b25dfb2da47.png",
     "index.html": "/index.html",
     "main.c8a76c77.css.map": "/static/css/main.c8a76c77.css.map",
-    "main.d0e5ca0f.js.map": "/static/js/main.d0e5ca0f.js.map"
+    "main.cdb8d990.js.map": "/static/js/main.cdb8d990.js.map"
   },
   "entrypoints": [
     "static/css/main.c8a76c77.css",
-    "static/js/main.d0e5ca0f.js"
+    "static/js/main.cdb8d990.js"
   ]
 }
