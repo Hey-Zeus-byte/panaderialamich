@@ -19,11 +19,11 @@ const PageMaxContainer = styled.div`
 
 const Text = styled.p`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: ${pxv(30)};
+  font-size: ${pxv(32)};
   margin: 5px;
 
   @media only screen and (max-width: 768px) {
-    font-size: ${pxv(30)};
+    font-size: ${pxv(48)};
   }
 `;
 
@@ -72,40 +72,41 @@ const Welcome = styled.h1`
   span {
     opacity: 0;
     overflow: hidden;
+    animation: slideIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
 
   span:nth-child(1) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards;
+    animation-delay: 0s;
   }
   span:nth-child(2) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 1.4s forwards;
+    animation-delay: 0.05s;
   }
   span:nth-child(3) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 1.6s forwards;
+    animation-delay: 0.1s;
   }
   span:nth-child(4) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 1.8s forwards;
+    animation-delay: 0.15s;
   }
   span:nth-child(5) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+    animation-delay: 0.2s;
   }
   span:nth-child(6) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2.2s forwards;
+    animation-delay: 0.25s;
   }
   span:nth-child(7) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2.4s forwards;
+    animation-delay: 0.3s;
   }
   span:nth-child(8) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2.6s forwards;
+    animation-delay: 0.35s;
   }
   span:nth-child(9) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 2.8s forwards;
+    animation-delay: 0.4s;
   }
   span:nth-child(10) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 3s forwards;
+    animation-delay: 0.45s;
   }
   span:nth-child(11) {
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 3.2s forwards;
+    animation-delay: 0.5s;
   }
 
   @keyframes slideIn {
@@ -169,7 +170,7 @@ const AboutUsContainer = styled.div`
     cursor: pointer;
     opacity: 0;
     font-family: Inter;
-    animation: slideIn 2s cubic-bezier(0.23, 1, 0.32, 1) 4s forwards;
+    animation: slideIn 1s cubic-bezier(0.23, 1, 0.32, 1) 1s forwards;
 
     @keyframes slideIn {
       0% {
@@ -221,7 +222,7 @@ const UpperContainer = styled.div`
     opacity: 0;
     transform: translateY(20vh);
     visibility: hidden;
-    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    transition: opacity 1.6s ease-out, transform 2s ease-out;
     will-change: opacity, visibility;
   }
 
@@ -370,23 +371,36 @@ const Home = () => {
 
   useEffect(() => {
     let interval;
-    if (isVisible) {
-      let startValue = 0;
-      const endValue = 70;
-      const duration = 3000;
-      const increment = Math.ceil((endValue - startValue) / (duration / 10));
+    let timeout;
 
-      interval = setInterval(() => {
-        startValue += increment;
-        if (startValue >= endValue) {
-          startValue = endValue;
-          clearInterval(interval);
-        }
-        setMovingNumber(Math.min(startValue, endValue));
-      }, 10);
+    if (isVisible) {
+      const startCounting = () => {
+        let startValue = 0;
+        const endValue = 70;
+        const duration = 3000;
+        const increment = Math.ceil((endValue - startValue) / (duration / 10));
+
+        interval = setInterval(() => {
+          startValue += increment;
+          if (startValue >= endValue) {
+            startValue = endValue;
+            clearInterval(interval);
+          }
+          setMovingNumber(Math.min(startValue, endValue));
+        }, 10);
+      };
+
+      if (window.innerWidth <= 768) {
+        timeout = setTimeout(startCounting, 2250);
+      } else {
+        startCounting();
+      }
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (timeout) clearTimeout(timeout);
+    };
   }, [isVisible]);
 
   return (

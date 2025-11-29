@@ -27,7 +27,7 @@ const ImageContainer = styled.div`
   cursor: pointer;
 
   @media only screen and (max-width: 768px) {
-    width: ${pxv(950)};
+    width: ${pxv(1250)};
   }
 `;
 
