@@ -5,22 +5,25 @@ import lobby from "../images/miscellaneous/lobby.jpg";
 import { openGoogleMaps } from "../components/Map";
 import ImageSlider from "../components/ImageSlider";
 // import HeroSection from "./PanComponents/HeroSection";
+import { pxv } from "../styles/pxv";
+import { tablet } from "../styles/media";
+
+const PageMaxContainer = styled.div`
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 ${pxv(12)};
+`;
 
 const Text = styled.p`
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 30px;
+  font-size: ${pxv(30)};
   margin: 5px;
 
-  @media only screen and (max-width: 1250px) {
-    font-size: 25px;
-  }
-
   @media only screen and (max-width: 768px) {
-    font-size: 20px;
-  }
-
-  @media only screen and (max-width: 500px) {
-    font-size: 18px;
+    font-size: ${pxv(30)};
   }
 `;
 
@@ -33,21 +36,14 @@ const RedText = styled(Text)`
   align-items: center;
   justify-content: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 60px;
+  font-size: ${pxv(48)};
   margin: 5px;
   color: #8d2424;
   text-align: center;
 
-  @media only screen and (max-width: 1250px) {
-    font-size: 40px;
-  }
-
-  @media only screen and (max-width: 768px) {
-    font-size: 30px;
-  }
-  @media only screen and (max-width: 520px) {
-    font-size: 20px;
-  }
+  ${tablet`
+    font-size: ${pxv(64)};
+  `}
 `;
 
 const WelcomeCon = styled.div`
@@ -58,14 +54,20 @@ const WelcomeCon = styled.div`
   text-shadow: -2px 2px 20px #000, 2px 2px 4px #000, 2px -2px 0 #000,
     -2px -2px 0 #000;
   border-radius: 30%;
-  height: 30vh;
+  height: ${pxv(140)};
+  margin-bottom: ${pxv(48)};
+
+  ${tablet`
+    height: unset
+  `}
 `;
 
 const Welcome = styled.h1`
   color: goldenrod;
   font-family: snell roundhand, cursive;
-  font-size: 230px;
+  font-size: ${pxv(180)};
   overflow: hidden;
+  margin: ${pxv(12)} 0;
 
   span {
     opacity: 0;
@@ -118,41 +120,30 @@ const Welcome = styled.h1`
     }
   }
 
-  @media only screen and (max-width: 1250px) {
-    font-size: 150px;
-  }
-
   @media only screen and (max-width: 768px) {
-    font-size: 95px;
-  }
-
-  @media only screen and (max-width: 500px) {
-    font-size: 70px;
-  }
-
-  @media only screen and (max-width: 428px) {
-    font-size: 56px;
-  }
-
-  @media only screen and (max-width: 375px) {
-    font-size: 46px;
+    font-size: ${pxv(200)};
   }
 `;
 
 const AboutUsWrapper = styled.div`
-  height: 60vh;
   background-color: #b9d5d9;
   background-image: url(${lobby});
   background-repeat: no-repeat;
   background-size: cover;
-  object-fit: contain;
   background-position: 50% 50%;
+  object-fit: contain;
   background-blend-mode: multiply;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: ${pxv(120)} 0;
+  height: 50vh;
+
+  @media (min-width: 769px) and (max-width: 1240px) {
+    height: 30vh;
+    background-position: 50% 0%;
+  }
 
   @media only screen and (max-width: 768px) {
     padding-top: 50px;
+    height: unset;
   }
 `;
 
@@ -167,9 +158,8 @@ const AboutUsContainer = styled.div`
   margin-top: -50px;
 
   .about-us {
-    font-size: 46px;
+    font-size: ${pxv(48)};
     text-align: center;
-    line-height: 50px;
     font-weight: 800;
     margin: 0;
     margin-top: 30px;
@@ -193,23 +183,13 @@ const AboutUsContainer = styled.div`
       }
     }
 
-    @media only screen and (max-width: 1250px) {
-      font-size: 28px;
-    }
-
     @media only screen and (max-width: 768px) {
-      font-size: 24px;
+      font-size: ${pxv(56)};
       line-height: 30px;
     }
-    @media only screen and (max-width: 450px) {
-      font-size: 20px;
-      line-height: 26px;
-      padding: 0;
-      margin-top: 0;
-    }
-    @media only screen and (max-width: 375px) {
-      font-size: 18px;
-      line-height: 22px;
+
+    @media only screen and (max-width: 480px) {
+      line-height: 24px;
     }
   }
 `;
@@ -217,9 +197,17 @@ const AboutUsContainer = styled.div`
 const ContactUsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  line-height: 50px;
+  width: 100%;
+
+  > div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: ${pxv(64)};
+    padding: 0 ${pxv(80)};
+  }
 `;
 
 const UpperContainer = styled.div`
@@ -227,9 +215,7 @@ const UpperContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 80px;
-  margin: 40px 0;
-  line-height: 50px;
+  padding: ${pxv(80)} 12px;
 
   .fade-in-section {
     opacity: 0;
@@ -243,43 +229,26 @@ const UpperContainer = styled.div`
     opacity: 1;
     transform: none;
     visibility: visible;
-  }
-
-  @media only screen and (max-width: 1250px) {
-    padding: 80px;
-    margin: 40px 0;
+    padding: ${pxv(20)} 0;
+    margin: 0;
   }
 
   @media only screen and (max-width: 768px) {
-    padding: 80px;
-    margin: 40px 0;
-  }
-
-  @media only screen and (max-width: 500px) {
-    padding: 20px;
-    margin: 20px 0;
+    padding: ${pxv(160)} 12px;
   }
 `;
 
 const SlidingText = styled.p`
-  font-size: 80px;
+  font-size: ${pxv(80)};
   text-align: center;
 
-  @media only screen and (max-width: 1250px) {
-    font-size: 60px;
-  }
-
   @media only screen and (max-width: 768px) {
-    font-size: 40px;
-  }
-
-  @media only screen and (max-width: 500px) {
-    font-size: 40px;
+    font-size: ${pxv(64)};
   }
 `;
 
 const MovingNumber = styled.span`
-  font-size: 140px;
+  font-size: ${pxv(140)};
   font-weight: 900;
   color: #008000;
   text-shadow: -1px 1px 10px #000, 1px 1px 2px #000, 1px -1px 0 #000,
@@ -288,18 +257,14 @@ const MovingNumber = styled.span`
 
 const MiddleContainer = styled.div`
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-evenly;
+  gap: ${pxv(80)};
   align-items: center;
-  padding: 40px;
+  width: 100%;
 
-  @media only screen and (max-width: 1250px) {
+  @media only screen and (max-width: 1240px) {
     flex-direction: column-reverse;
-  }
-
-  @media only screen and (max-width: 768px) {
-  }
-
-  @media only screen and (max-width: 500px) {
   }
 `;
 
@@ -313,28 +278,7 @@ const BottomContainer = styled.div`
 const SliderStylesContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 900px;
-  height: 600px;
-
-  @media only screen and (max-width: 1250px) {
-    width: 700px;
-    height: 600px;
-  }
-
-  @media only screen and (max-width: 768px) {
-    width: 500px;
-    height: 400px;
-  }
-
-  @media only screen and (max-width: 500px) {
-    width: 325px;
-    height: 300px;
-  }
-
-  @media only screen and (max-width: 428px) {
-    width: 275px;
-    height: 300px;
-  }
+  width: 100%;
 `;
 
 const AboutUs = () => {
@@ -356,7 +300,7 @@ const AboutUs = () => {
             onClick={() => setTranslation(!translation)}
           >
             Empresa familiar que ha estado sirviendo felizmente a la comunidad
-            de Modesto durante más de 18+ años. Ven a visitarnos para recordar
+            de Modesto durante más de 20+ años. Ven a visitarnos para recordar
             el olor y el sabor de la auténtica repostería mexicana. Ayúdanos a
             continuar nuestra tradición y cultura expandiendo el conocimiento a
             la siguiente generación.
@@ -367,7 +311,7 @@ const AboutUs = () => {
             onClick={() => setTranslation(!translation)}
           >
             Family Business thats been happily serving the Modesto community for
-            more than 18+ years. Come visit us to reminisce in the scent and
+            more than 20+ years. Come visit us to reminisce in the scent and
             taste of authentic Mexican pastries. Help us continue our tradition
             and culture by expanding the knowledge to the following generation.
           </Text>
@@ -381,17 +325,21 @@ const ContactUs = () => {
   return (
     <ContactUsContainer>
       <div>
-        <WeightText>Address:</WeightText>
-        <Text onClick={openGoogleMaps} style={{ cursor: "pointer" }}>
-          3801 Yosemite Boulevard, Suite B
-        </Text>
-        <Text>Modesto, CA 95357</Text>
-        <WeightText>Phone:</WeightText>
-        <Text>209-578-3599</Text>
-        <WeightText>Business Hours:</WeightText>
-        <Text>Monday: Closed</Text>
-        <Text>Tuesday - Saturday: 7am - 7pm</Text>
-        <Text>Sunday: 7am - 2pm</Text>
+        <div>
+          <WeightText>Address:</WeightText>
+          <Text onClick={openGoogleMaps} style={{ cursor: "pointer" }}>
+            3801 Yosemite Boulevard, Suite B
+          </Text>
+          <Text>Modesto, CA 95357</Text>
+          <WeightText>Phone:</WeightText>
+          <Text>209-578-3599</Text>
+        </div>
+        <div>
+          <WeightText>Business Hours:</WeightText>
+          <Text>Monday: Closed</Text>
+          <Text>Tuesday - Saturday: 7am - 7pm</Text>
+          <Text>Sunday: 7am - 2pm</Text>
+        </div>
       </div>
     </ContactUsContainer>
   );
@@ -442,41 +390,41 @@ const Home = () => {
   }, [isVisible]);
 
   return (
-    <ContentWrapper>
-      <AboutUs />
-      <UpperContainer>
-        <SlidingText
-          className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-          ref={domRef}
-        >
-          Disfruta mas de
-        </SlidingText>
-        <MovingNumber
-          className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-          ref={domRef}
-        >
-          {movingNumber}
-        </MovingNumber>
-        <SlidingText
-          className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-          ref={domRef}
-        >
-          piezas de pan!
-        </SlidingText>
-      </UpperContainer>
-      {/* <HeroSection /> */}
-      <MiddleContainer>
-        <ContactUs />
-        <div>
+    <PageMaxContainer>
+      <ContentWrapper>
+        <AboutUs />
+        <UpperContainer>
+          <SlidingText
+            className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+            ref={domRef}
+          >
+            Disfruta mas de
+          </SlidingText>
+          <MovingNumber
+            className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+            ref={domRef}
+          >
+            {movingNumber}
+          </MovingNumber>
+          <SlidingText
+            className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+            ref={domRef}
+          >
+            piezas de pan!
+          </SlidingText>
+        </UpperContainer>
+        {/* <HeroSection /> */}
+        <MiddleContainer>
+          <ContactUs />
           <SliderStylesContainer>
             <ImageSlider />
           </SliderStylesContainer>
-        </div>
-      </MiddleContainer>
-      <BottomContainer>
-        <RedText>We do not offer online ordering.</RedText>
-      </BottomContainer>
-    </ContentWrapper>
+        </MiddleContainer>
+        <BottomContainer>
+          <RedText>We do not offer online ordering.</RedText>
+        </BottomContainer>
+      </ContentWrapper>
+    </PageMaxContainer>
   );
 };
 

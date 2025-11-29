@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { pxv } from "../styles/pxv";
 
 export const ContentWrapper = styled.div`
-  max-width: auto;
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #fefefa;
-
-  @media only screen and (max-width: 1250px) {
-  }
+  /* padding: 0 ${pxv(12)}; */
 
   @media only screen and (max-width: 768px) {
-  }
-
-  @media only screen and (max-width: 500px) {
   }
 `;
