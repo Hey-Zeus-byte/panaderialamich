@@ -197,8 +197,17 @@ const AboutUsContainer = styled.div`
 const ContactUsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+
+  > div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: ${pxv(64)};
+    padding: 0 ${pxv(80)};
+  }
 `;
 
 const UpperContainer = styled.div`
@@ -224,19 +233,8 @@ const UpperContainer = styled.div`
     margin: 0;
   }
 
-  @media only screen and (max-width: 1250px) {
-    padding: 80px;
-    margin: 40px 0;
-  }
-
   @media only screen and (max-width: 768px) {
-    padding: 80px;
-    margin: 40px 0;
-  }
-
-  @media only screen and (max-width: 500px) {
-    padding: 20px;
-    margin: 20px 0;
+    padding: ${pxv(160)} 12px;
   }
 `;
 
@@ -259,8 +257,11 @@ const MovingNumber = styled.span`
 
 const MiddleContainer = styled.div`
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-evenly;
+  gap: ${pxv(80)};
   align-items: center;
+  width: 100%;
 
   @media only screen and (max-width: 1240px) {
     flex-direction: column-reverse;
@@ -277,28 +278,7 @@ const BottomContainer = styled.div`
 const SliderStylesContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 900px;
-  height: 600px;
-
-  @media only screen and (max-width: 1250px) {
-    width: 700px;
-    height: 600px;
-  }
-
-  @media only screen and (max-width: 768px) {
-    width: 500px;
-    height: 400px;
-  }
-
-  @media only screen and (max-width: 500px) {
-    width: 325px;
-    height: 300px;
-  }
-
-  @media only screen and (max-width: 428px) {
-    width: 275px;
-    height: 300px;
-  }
+  width: 100%;
 `;
 
 const AboutUs = () => {
@@ -345,20 +325,21 @@ const ContactUs = () => {
   return (
     <ContactUsContainer>
       <div>
-        <WeightText>Address:</WeightText>
-        <Text
-          onClick={openGoogleMaps}
-          style={{ cursor: "pointer", textDecoration: "underline" }}
-        >
-          3801 Yosemite Boulevard, Suite B
-        </Text>
-        <Text>Modesto, CA 95357</Text>
-        <WeightText>Phone:</WeightText>
-        <Text>209-578-3599</Text>
-        <WeightText>Business Hours:</WeightText>
-        <Text>Monday: Closed</Text>
-        <Text>Tuesday - Saturday: 7am - 7pm</Text>
-        <Text>Sunday: 7am - 2pm</Text>
+        <div>
+          <WeightText>Address:</WeightText>
+          <Text onClick={openGoogleMaps} style={{ cursor: "pointer" }}>
+            3801 Yosemite Boulevard, Suite B
+          </Text>
+          <Text>Modesto, CA 95357</Text>
+          <WeightText>Phone:</WeightText>
+          <Text>209-578-3599</Text>
+        </div>
+        <div>
+          <WeightText>Business Hours:</WeightText>
+          <Text>Monday: Closed</Text>
+          <Text>Tuesday - Saturday: 7am - 7pm</Text>
+          <Text>Sunday: 7am - 2pm</Text>
+        </div>
       </div>
     </ContactUsContainer>
   );
@@ -435,11 +416,9 @@ const Home = () => {
         {/* <HeroSection /> */}
         <MiddleContainer>
           <ContactUs />
-          <div>
-            <SliderStylesContainer>
-              <ImageSlider />
-            </SliderStylesContainer>
-          </div>
+          <SliderStylesContainer>
+            <ImageSlider />
+          </SliderStylesContainer>
         </MiddleContainer>
         <BottomContainer>
           <RedText>We do not offer online ordering.</RedText>
