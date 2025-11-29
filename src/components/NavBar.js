@@ -4,22 +4,16 @@ import { ContentWrapper } from "./ContentWrapper";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 import { HamburgerButton } from "./HamburgerButton";
+import { pxv } from "../styles/pxv";
 
 const NavFlexWrapper = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
   background-color: white;
-  padding: 5px 50px 10px;
+  padding: ${pxv(10)} 0;
   justify-content: space-between;
-
-  @media only screen and (max-width: 850px) {
-    padding: 5px 30px 10px;
-  }
-
-  @media only screen and (max-width: 500px) {
-    padding: 5px 10px 10px;
-  }
+  width: 100%;
 `;
 
 const NavList = styled.div`
@@ -27,7 +21,8 @@ const NavList = styled.div`
 
   @media only screen and (min-width: 768px) {
     display: flex;
-    gap: 100px;
+    gap: ${pxv(100)};
+    padding-right: ${pxv(18)};
   }
 `;
 
@@ -35,6 +30,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 30px;
   color: black;
+  padding-left: ${pxv(10)};
 
   @media only screen and (max-width: 1050px) {
     font-size: 25px;
@@ -60,17 +56,15 @@ const NavBar = () => {
   const [open] = useState();
 
   return (
-    <div>
-      <ContentWrapper>
-        <NavFlexWrapper>
-          <NavLink to="/">
-            <Logo src={logo} alt="panaderia_la_michoacana_logo" />
-          </NavLink>
-          <DesktopNavBar />
-          <HamburgerButton onToggle={open} />
-        </NavFlexWrapper>
-      </ContentWrapper>
-    </div>
+    <ContentWrapper>
+      <NavFlexWrapper>
+        <NavLink to="/">
+          <Logo src={logo} alt="panaderia_la_michoacana_logo" />
+        </NavLink>
+        <DesktopNavBar />
+        <HamburgerButton onToggle={open} />
+      </NavFlexWrapper>
+    </ContentWrapper>
   );
 };
 
