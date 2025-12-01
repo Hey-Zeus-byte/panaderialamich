@@ -4,9 +4,9 @@ import styled from "styled-components";
 import lobby from "../images/miscellaneous/lobby.jpg";
 import { openGoogleMaps } from "../components/Map";
 import ImageSlider from "../components/ImageSlider";
-// import HeroSection from "./PanComponents/HeroSection";
 import { pxv } from "../styles/pxv";
 import { tablet } from "../styles/media";
+import heroVideo from "../videos/upperContainerVideo.webm";
 
 const PageMaxContainer = styled.div`
   max-width: 1440px;
@@ -127,6 +127,7 @@ const Welcome = styled.h1`
 `;
 
 const AboutUsWrapper = styled.div`
+  position: relative;
   background-color: #b9d5d9;
   background-image: url(${lobby});
   background-repeat: no-repeat;
@@ -136,6 +137,18 @@ const AboutUsWrapper = styled.div`
   background-blend-mode: multiply;
   padding: ${pxv(120)} 0;
   height: 50vh;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 5%;
+    pointer-events: none;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  }
 
   @media (min-width: 769px) and (max-width: 1240px) {
     height: 30vh;
@@ -211,12 +224,58 @@ const ContactUsContainer = styled.div`
   }
 `;
 
+const BackgroundVideo = styled.video`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 10%;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.5);
+`;
+
 const UpperContainer = styled.div`
+  position: relative;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: ${pxv(80)} 12px;
+  padding: ${pxv(200)} 0;
+  color: #fbeeeeff;
+  text-shadow: -1px 1px 10px #000, 1px 1px 2px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 10%;
+    pointer-events: none;
+    z-index: 1;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 10%;
+    pointer-events: none;
+
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
 
   .fade-in-section {
     opacity: 0;
@@ -235,7 +294,7 @@ const UpperContainer = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    padding: ${pxv(160)} 12px;
+    padding: ${pxv(160)} 0;
   }
 `;
 
@@ -257,12 +316,14 @@ const MovingNumber = styled.span`
 `;
 
 const MiddleContainer = styled.div`
+  padding-top: ${pxv(140)};
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-evenly;
   gap: ${pxv(80)};
   align-items: center;
   width: 100%;
+  overflow: hidden;
 
   @media only screen and (max-width: 1240px) {
     flex-direction: column-reverse;
@@ -339,7 +400,7 @@ const ContactUs = () => {
           <WeightText>Business Hours:</WeightText>
           <Text>Monday: Closed</Text>
           <Text>Tuesday - Saturday: 7am - 7pm</Text>
-          <Text>Sunday: 7am - 2pm</Text>
+          <Text>Sunday: 7am - 1pm</Text>
         </div>
       </div>
     </ContactUsContainer>
@@ -408,6 +469,9 @@ const Home = () => {
       <ContentWrapper>
         <AboutUs />
         <UpperContainer>
+          <BackgroundVideo autoPlay muted loop playsInline aria-hidden="true">
+            <source src={heroVideo} type="video/webm" />
+          </BackgroundVideo>
           <SlidingText
             className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
             ref={domRef}
@@ -427,7 +491,6 @@ const Home = () => {
             piezas de pan!
           </SlidingText>
         </UpperContainer>
-        {/* <HeroSection /> */}
         <MiddleContainer>
           <ContactUs />
           <SliderStylesContainer>
