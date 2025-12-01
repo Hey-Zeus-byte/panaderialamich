@@ -17,6 +17,7 @@ const MobileNavWrapper = styled.div`
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: 9;
     }
   }
 `;
@@ -50,7 +51,7 @@ const NavWrapper = styled.div`
   height: 100vh;
   width: 250px;
   padding-top: 56px;
-  z-index: 1;
+  z-index: 10;
 `;
 
 const MobileNavMenu = ({ open, setOpen }) => {

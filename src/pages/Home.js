@@ -230,7 +230,7 @@ const BackgroundVideo = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 10%;
+  object-position: 50% 14%;
   z-index: 0;
   pointer-events: none;
   filter: brightness(0.5);
@@ -269,6 +269,7 @@ const UpperContainer = styled.div`
     bottom: -1px;
     height: 10%;
     pointer-events: none;
+    z-index: 1;
 
     background: linear-gradient(
       to top,

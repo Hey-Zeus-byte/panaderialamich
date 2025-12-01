@@ -5,7 +5,7 @@ import MobileNavMenu from "./MobileNavMenu";
 const HamburgerButtonWrapper = styled.div`
   display: block;
   margin: 16px;
-  z-index: 5;
+  z-index: 11;
   div {
     width: 30px;
     height: 2px;
