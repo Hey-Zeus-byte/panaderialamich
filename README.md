@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Panaderia La Michoacana
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React website built with Vite, React Router, and styled-components.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+Use Node.js 24 LTS and npm. If you use nvm, run `nvm install` and `nvm use`.
+Node.js 14 is no longer supported. Use npm and the committed package-lock.json
+as the dependency source of truth.
 
-### `yarn start`
+## Development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`npm ci` installs dependencies from the lockfile.
+`npm start` (or `npm run dev`) starts the development server at
+http://localhost:3000 (or the next available port).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Production
 
-### `yarn test`
+`npm run build` creates the production site in `build/`.
+`npm run preview` serves that build locally for inspection.
+`npm run deploy` builds and publishes `build/` to the gh-pages branch.
+Deployment changes the live site; run it only when ready to publish.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The custom-domain file in `public/CNAME` is copied into the build.
+The root `CNAME` is retained for the repository's existing domain configuration.
+HashRouter preserves the existing /#/pan and /#/pasteles URLs on static hosting.
 
-### `yarn build`
+## Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `src/pages/`: Home, Pan, and Pasteles pages
+- `src/components/`: shared navigation, footer, and image slider
+- `src/styles/`: responsive sizing and breakpoint helpers
+- `src/images/` and `src/videos/`: bundled media
+- `public/`: files copied unchanged into the build
+- `index.html`: Vite entry document, including existing Google Analytics
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+JSX source files use the .jsx extension. Styling, content, and React versions
+were retained during the migration from Create React App.
+There is currently no automated test suite configured.
