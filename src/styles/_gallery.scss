@@ -1,0 +1,60 @@
+// Shared gallery rules keep Pan and Pasteles responsive in the same way.
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  width: 100%;
+  max-width: 1050px;
+  gap: clamp(20px, 3.33vw, 48px);
+  padding: 20px clamp(16px, 2.22vw, 32px);
+
+  > div {
+    min-width: 0;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 525px;
+  }
+}
+
+@mixin image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 475 / 375;
+  border-radius: 20px;
+
+  &:focus-visible {
+    outline: 2px solid blue;
+  }
+}
+
+@mixin name {
+  font-size: clamp(20px, 2.08vw, 30px);
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;
+  margin: 12px 0 0;
+}
+
+@mixin title {
+  font-size: clamp(56px, 8vw, 100px);
+  line-height: 1.2;
+  font-family: snell roundhand, cursive;
+  text-align: center;
+  margin: 10px 0;
+  text-shadow: -1px 1px 10px #000;
+}
+
+@mixin notice {
+  width: 100%;
+  padding: 16px;
+
+  .responsiveText {
+    font-size: clamp(24px, 5vw, 64px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    padding: 20px 0;
+  }
+}

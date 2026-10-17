@@ -38,7 +38,7 @@ const Figura = ({ figura }) => {
     <>
       {figura.map((figura) => {
         return (
-          <div>
+          <div key={figura.name}>
             <img className={styles.panImage} src={figura.image} alt={figura.name} />
             <p className={styles.panName}>{figura.name}</p>
           </div>

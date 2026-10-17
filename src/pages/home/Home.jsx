@@ -67,7 +67,7 @@ const Home = () => {
     <div className={styles.pageMaxContainer}>
       <ContentWrapper>
         <AboutUs />
-        <div className={styles.upperContainer}>
+        <div className={styles.upperContainer} ref={domRef}>
           <video
             className={styles.backgroundVideo}
             autoPlay
@@ -80,19 +80,16 @@ const Home = () => {
           </video>
           <p
             className={`${styles.slidingText} ${styles.fadeInSection} ${isVisible ? styles.isVisible : ""}`}
-            ref={domRef}
           >
             Disfruta mas de
           </p>
           <span
             className={`${styles.movingNumber} ${styles.fadeInSection} ${isVisible ? styles.isVisible : ""}`}
-            ref={domRef}
           >
             {movingNumber}
           </span>
           <p
             className={`${styles.slidingText} ${styles.fadeInSection} ${isVisible ? styles.isVisible : ""}`}
-            ref={domRef}
           >
             piezas de pan!
           </p>

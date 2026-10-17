@@ -1,28 +1,35 @@
-import styles from "./HamburgerButton.module.scss";
-import { useState } from "react";
+import { useEffect, useId, useState } from "react";
 import MobileNavMenu from "../MobileNavMenu/MobileNavMenu.jsx";
+import styles from "./HamburgerButton.module.scss";
 
-export const HamburgerButton = ({ onToggle }) => {
-  const [open, setOpen] = useState();
+export const HamburgerButton = () => {
+  const [open, setOpen] = useState(false);
+  const menuId = useId();
 
-  const toggleOpen = () => {
-    setOpen(!open);
-    if (onToggle) {
-      onToggle(!open);
-    }
-  };
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   return (
     <>
-      <div
+      <button
+        type="button"
         className={`${styles.hamburgerButtonWrapper} ${open ? styles.open : ""}`}
-        onClick={toggleOpen}
+        aria-label={open ? "Close navigation" : "Open navigation"}
+        aria-expanded={open}
+        aria-controls={menuId}
+        onClick={() => setOpen((value) => !value)}
       >
-        <div />
-        <div />
-        <div />
-      </div>
-      <MobileNavMenu open={open} setOpen={setOpen} />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+      </button>
+      <MobileNavMenu id={menuId} open={open} setOpen={setOpen} />
     </>
   );
 };

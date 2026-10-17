@@ -56,3 +56,14 @@ Vite compiles Sass and scopes class names through CSS Modules. Global styles
 live in `src/styles/global.scss`, and shared helpers live in `src/styles/_helpers.scss`.
 Menu state uses an `open` class. The image slider passes only its current image
 URL through a CSS custom property; its visual rules are defined in SCSS.
+
+## Responsive layouts
+
+The desktop navigation starts at 768px; narrower screens use the mobile drawer.
+Product galleries switch from two columns to one at 640px, and home page
+contact details stack at 600px. Fluid typography keeps text readable on phones.
+Shared gallery rules live in `src/styles/_gallery.scss`.
+
+When adjusting layout, check Home, Pan, and Pasteles at 320, 390, 768, 820,
+1024, and 1440px. Check long product names, the search field, contact details,
+and both mouse and keyboard operation of the menu and slider.

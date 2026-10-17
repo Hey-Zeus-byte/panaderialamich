@@ -8,9 +8,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 const ImageSlider = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
 
-  const leftArrowRef = useRef(null);
-  const rightArrowRef = useRef(null);
-
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
   const SWIPE_THRESHOLD = 50;
@@ -21,16 +18,6 @@ const ImageSlider = () => {
 
   const goToPrevious = () => {
     setCurrentIdx((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      if (e.target === leftArrowRef.current) {
-        goToPrevious();
-      } else if (e.target === rightArrowRef.current) {
-        goToNext();
-      }
-    }
   };
 
   const onTouchStart = (e) => {
@@ -64,26 +51,28 @@ const ImageSlider = () => {
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      <FontAwesomeIcon
-        className={`${styles.arrowIcon} ${styles.leftArrowIcon}`}
-        icon={faArrowLeft}
+      <button
+        type="button"
+        className={`${styles.arrowButton} ${styles.leftArrow}`}
+        aria-label="Previous photo"
         onClick={goToPrevious}
-        tabIndex="0"
-        onKeyDown={handleKeyDown}
-        ref={leftArrowRef}
-      />
+      >
+        <FontAwesomeIcon className={styles.arrowIcon} icon={faArrowLeft} />
+      </button>
       <div
         className={styles.image}
         style={{ "--slide-image": `url(${slides[currentIdx].url})` }}
+        role="img"
+        aria-label={`Bakery photo ${currentIdx + 1} of ${slides.length}`}
       />
-      <FontAwesomeIcon
-        className={`${styles.arrowIcon} ${styles.rightArrowIcon}`}
-        icon={faArrowRight}
+      <button
+        type="button"
+        className={`${styles.arrowButton} ${styles.rightArrow}`}
+        aria-label="Next photo"
         onClick={goToNext}
-        tabIndex="0"
-        onKeyDown={handleKeyDown}
-        ref={rightArrowRef}
-      />
+      >
+        <FontAwesomeIcon className={styles.arrowIcon} icon={faArrowRight} />
+      </button>
     </div>
   );
 };
