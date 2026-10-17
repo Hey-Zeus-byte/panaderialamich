@@ -1,3 +1,4 @@
+import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 import { CAKES } from "../../data/cakes.js";
 import styles from "./Pasteles.module.scss";
 import React from "react";
@@ -9,6 +10,7 @@ const Pasteles = () => {
       <p className={styles.title}>Pasteles</p>
       <div className={styles.cakeWrapper}>
         {CAKES.map((cake) => {
+          if (cake.images?.length) return <ProductCard key={cake.name} item={cake} />;
           return (
             <div key={cake.name}>
               <img className={styles.cakeImage} src={cake.image} alt={cake.name} tabIndex="0" />

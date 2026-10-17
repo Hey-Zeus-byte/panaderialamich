@@ -32,6 +32,7 @@ src/
     home/                   # Home page, its sections, and SCSS module
     pan/                    # Bread gallery and its SCSS module
     pasteles/               # Cake gallery and its SCSS module
+    hot-drinks/             # Drink carousel and its SCSS module
   styles/                   # Global SCSS and shared sizing helpers
   utils/                    # Google Maps link helper
 public/                     # Files copied unchanged into production
@@ -67,3 +68,18 @@ Shared gallery rules live in `src/styles/_gallery.scss`.
 When adjusting layout, check Home, Pan, and Pasteles at 320, 390, 768, 820,
 1024, and 1440px. Check long product names, the search field, contact details,
 and both mouse and keyboard operation of the menu and slider.
+
+## Hot drinks
+
+The Hot Drinks link opens `/#/hot-drinks`. Edit the six drink cards in
+`src/data/hotDrinks.js`. They currently share the supplied placeholder photo,
+converted from HEIC to a browser-compatible JPEG. Replace each `image` reference
+when individual drink photos are available. The carousel supports swiping,
+previous/next buttons, and Arrow, Home, and End keys when the list has focus.
+
+## Product photo galleries
+
+Items in `src/data/bread.js` (Pan) and `src/data/cakes.js` (Pasteles) can use either `image: photo` for one photo,
+or `images: [firstPhoto, secondPhoto, ...]` for multiple photos. Multiple-photo
+items display green selection dots below the image and support swiping and
+Left/Right keys while a dot has focus. Each product keeps its own photo selection.

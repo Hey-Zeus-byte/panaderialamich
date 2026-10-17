@@ -14,14 +14,6 @@
   padding: 0 16px;
 }
 
-.panImage {
-  @include gallery.image;
-}
-
-.panName {
-  @include gallery.name;
-}
-
 .title {
   @include gallery.title;
 }
