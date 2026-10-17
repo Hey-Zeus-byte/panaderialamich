@@ -11,6 +11,7 @@ const DesktopNavBar = () => {
       <Link className={styles.navLink} to="/">Home</Link>
       <Link className={styles.navLink} to="/pan">Pan</Link>
       <Link className={styles.navLink} to="/pasteles">Pasteles</Link>
+      <Link className={styles.navLink} to="/hot-drinks">Hot Drinks</Link>
     </div>
   );
 };

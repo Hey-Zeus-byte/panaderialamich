@@ -52,6 +52,7 @@ const MobileNavMenu = ({ id, open, setOpen }) => {
         <Link className={styles.navLink} to="/" onClick={() => setOpen(false)}>Home</Link>
         <Link className={styles.navLink} to="/pan" onClick={() => setOpen(false)}>Pan</Link>
         <Link className={styles.navLink} to="/pasteles" onClick={() => setOpen(false)}>Pasteles</Link>
+        <Link className={styles.navLink} to="/hot-drinks" onClick={() => setOpen(false)}>Hot Drinks</Link>
       </nav>
     </div>
   );
