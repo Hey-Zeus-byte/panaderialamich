@@ -14,17 +14,6 @@ as the dependency source of truth.
 `npm start` (or `npm run dev`) starts the development server at
 http://localhost:3000 (or the next available port).
 
-## Production
-
-`npm run build` creates the production site in `build/`.
-`npm run preview` serves that build locally for inspection.
-`npm run deploy` builds and publishes `build/` to the gh-pages branch.
-Deployment changes the live site; run it only when ready to publish.
-
-The custom-domain file in `public/CNAME` is copied into the build.
-The root `CNAME` is retained for the repository's existing domain configuration.
-HashRouter preserves the existing /#/pan and /#/pasteles URLs on static hosting.
-
 ## Structure
 
 ```text
