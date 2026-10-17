@@ -1,0 +1,100 @@
+.panWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.hero {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panImage {
+  width: 475px;
+  height: 375px;
+  border-radius: 20px;
+
+  &:focus {
+    outline: 2px solid blue;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    width: 425px;
+    height: 325px;
+  }
+
+  @media only screen and (max-width: 840px) {
+    width: 355px;
+    height: 295px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 285px;
+    height: 215px;
+  }
+}
+
+.panName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  line-height: 1px;
+
+  @media only screen and (max-width: 1250px) {
+    font-size: 26px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 20px;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  font-family: snell roundhand, cursive;
+  margin: 10px 0;
+  text-shadow: -1px 1px 10px #000;
+}
+
+.panSearch {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin: 0 150px;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0 70px;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+  }
+}
+
+.textWrapper {
+  .responsiveText {
+    @media only screen and (max-width: 768px) {
+      font-size: 30px;
+      font-weight: 700;
+      padding: 20px 0;
+    }
+  }
+}
+

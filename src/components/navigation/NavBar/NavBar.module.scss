@@ -1,0 +1,38 @@
+@use "../../../styles/helpers" as *;
+
+.navFlexWrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  padding: pxv(10) 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navList {
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    gap: pxv(100);
+    padding-right: pxv(18);
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+  padding-left: pxv(10);
+
+  @media only screen and (max-width: 1050px) {
+    font-size: 25px;
+  }
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+

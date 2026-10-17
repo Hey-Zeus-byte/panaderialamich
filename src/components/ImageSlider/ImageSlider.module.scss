@@ -1,0 +1,44 @@
+@use "../../styles/helpers" as *;
+
+.imageContainer {
+  width: pxv(950);
+  aspect-ratio: 4 / 3;
+  position: relative;
+  cursor: pointer;
+
+  @media only screen and (max-width: 768px) {
+    width: pxv(1250);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: var(--slide-image);
+}
+
+.arrowIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: pxv(32);
+  color: #ffffff;
+  cursor: pointer;
+
+  @media only screen and (max-width: 768px) {
+    font-size: pxv(48);
+  }
+}
+
+.leftArrowIcon {
+  left: 24px;
+}
+
+.rightArrowIcon {
+  right: 24px;
+}
+

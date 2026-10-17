@@ -1,0 +1,36 @@
+.heroGridContainer {
+  display: flex;
+  margin: 0 80px;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 0 20px;
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+}
+
+.gridItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.panImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spanTwo { grid-column: span 2; }
+.columnOne { grid-column: 1; }
+.columnTwo { grid-column: 2; }
+.rowOne { grid-row: 1; }
+.rowTwo { grid-row: 2; }

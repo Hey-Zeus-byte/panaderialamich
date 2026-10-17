@@ -1,6 +1,6 @@
 # Panaderia La Michoacana
 
-React website built with Vite, React Router, and styled-components.
+React website built with Vite, React Router, and SCSS modules.
 
 ## Requirements
 
@@ -27,13 +27,43 @@ HashRouter preserves the existing /#/pan and /#/pasteles URLs on static hosting.
 
 ## Structure
 
-- `src/pages/`: Home, Pan, and Pasteles pages
-- `src/components/`: shared navigation, footer, and image slider
-- `src/styles/`: responsive sizing and breakpoint helpers
-- `src/images/` and `src/videos/`: bundled media
-- `public/`: files copied unchanged into the build
-- `index.html`: Vite entry document, including existing Google Analytics
+```text
+src/
+  main.jsx                  # React entry point and HashRouter
+  app/                      # App shell and route definitions
+  assets/
+    images/                 # Logo and product photographs
+    videos/                 # Home page background video
+  components/
+    layout/                 # ContentWrapper and Footer
+    navigation/             # NavBar, hamburger button, mobile menu
+    ImageSlider/            # Shared slider and its SCSS module
+  data/                     # Bread, cake, and slider-image lists
+  pages/
+    home/                   # Home page, its sections, and SCSS module
+    pan/                    # Bread gallery and its SCSS module
+    pasteles/               # Cake gallery and its SCSS module
+  styles/                   # Global SCSS and shared sizing helpers
+  utils/                    # Google Maps link helper
+public/                     # Files copied unchanged into production
+index.html                  # HTML entry document and Google Analytics
+vite.config.mjs             # Development server and build configuration
+build/                      # Generated production site (Git-ignored)
+```
 
-JSX source files use the .jsx extension. Styling, content, and React versions
-were retained during the migration from Create React App.
+Each shared component has a folder containing its JSX and SCSS module.
+Page-specific sections live inside that page's `components/` folder.
+Keep product names and image references in `src/data/`, rather than inside
+rendering components. Put new bundled media in `src/assets/` and import it
+from the source; use `public/` for files that need a fixed public filename.
+
+Edit source files under `src/`; regenerate `build/` with `npm run build`.
 There is currently no automated test suite configured.
+
+## Styles
+
+Component styles live alongside their JSX in `*.module.scss` files.
+Vite compiles Sass and scopes class names through CSS Modules. Global styles
+live in `src/styles/global.scss`, and shared helpers live in `src/styles/_helpers.scss`.
+Menu state uses an `open` class. The image slider passes only its current image
+URL through a CSS custom property; its visual rules are defined in SCSS.

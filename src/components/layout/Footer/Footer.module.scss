@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  text-align: center;
+}
+
+.copyRightText {
+  font-family: "Source Sans Pro";
+  font-size: 13px;
+}
+
+.information {
+  font-size: 15px;
+  margin: 2px 0;
+}
+
+.address {
+  font-size: 15px;
+  cursor: pointer;
+  margin: 0;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.instagramLink {
+  width: 100%;
+  height: auto;
+}
+

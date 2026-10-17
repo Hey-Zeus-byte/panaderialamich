@@ -1,16 +1,16 @@
-import pinkcookie from "../images/cookies/pinkcookie.jpeg";
-import happyface from "../images/cookies/happyface.png";
-import chocochipcookie from "../images/cookies/chocochipcookie.jpeg";
-// import chococupcake from "../images/miscellaneous/chococupcake.jpeg";
-import crownstack from "../images/cookies/crownstack.jpeg";
-import pig from "../images/miscellaneous/pig.png";
-import pudin from "../images/miscellaneous/pudin2.jpg";
-import apple_emp from "../images/miscellaneous/apple_emp.jpg";
-import cono from "../images/miscellaneous/Conos.jpg";
-import cuerno from "../images/figura/Cuernos.jpg";
-import elote from "../images/figura/Elotes.jpg";
-import mantecada from "../images/miscellaneous/Mantecadas.jpg";
-import yoyo from "../images/miscellaneous/Yoyos.jpg";
+import pinkcookie from "../assets/images/cookies/pinkcookie.jpeg";
+import happyface from "../assets/images/cookies/happyface.png";
+import chocochipcookie from "../assets/images/cookies/chocochipcookie.jpeg";
+// import chococupcake from "../assets/images/miscellaneous/chococupcake.jpeg";
+import crownstack from "../assets/images/cookies/crownstack.jpeg";
+import pig from "../assets/images/miscellaneous/pig.png";
+import pudin from "../assets/images/miscellaneous/pudin2.jpg";
+import apple_emp from "../assets/images/miscellaneous/apple_emp.jpg";
+import cono from "../assets/images/miscellaneous/Conos.jpg";
+import cuerno from "../assets/images/figura/Cuernos.jpg";
+import elote from "../assets/images/figura/Elotes.jpg";
+import mantecada from "../assets/images/miscellaneous/Mantecadas.jpg";
+import yoyo from "../assets/images/miscellaneous/Yoyos.jpg";
 
 export const COOKIES = [
   {

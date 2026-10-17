@@ -1,0 +1,14 @@
+// Preserve the original viewport sizing formula and breakpoints.
+@function pxv($px) {
+  @return clamp(
+    1px,
+    calc(#{$px}vw * (100 / var(--siteBasis))),
+    calc(#{$px}px * var(--siteMax) / var(--siteBasis))
+  );
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
