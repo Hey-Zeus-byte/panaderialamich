@@ -10,7 +10,7 @@ const Pasteles = () => {
       <div className={styles.cakeWrapper}>
         {CAKES.map((cake) => {
           return (
-            <div>
+            <div key={cake.name}>
               <img className={styles.cakeImage} src={cake.image} alt={cake.name} tabIndex="0" />
               <p className={styles.cakeName}>{cake.name}</p>
             </div>

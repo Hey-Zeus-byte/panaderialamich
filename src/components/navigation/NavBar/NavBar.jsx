@@ -1,5 +1,5 @@
 import styles from "./NavBar.module.scss";
-import React, { useState } from "react";
+import React from "react";
 import { ContentWrapper } from "../../layout/ContentWrapper/ContentWrapper.jsx";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
@@ -16,17 +16,15 @@ const DesktopNavBar = () => {
 };
 
 const NavBar = () => {
-  const [open] = useState();
-
   return (
     <ContentWrapper>
-      <div className={styles.navFlexWrapper}>
-        <Link className={styles.navLink} to="/">
+      <nav className={styles.navFlexWrapper} aria-label="Main navigation">
+        <Link className={styles.logoLink} to="/">
           <img className={styles.logo} src={logo} alt="panaderia_la_michoacana_logo" />
         </Link>
         <DesktopNavBar />
-        <HamburgerButton onToggle={open} />
-      </div>
+        <HamburgerButton />
+      </nav>
     </ContentWrapper>
   );
 };

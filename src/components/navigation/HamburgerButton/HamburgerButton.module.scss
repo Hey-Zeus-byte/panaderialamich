@@ -1,43 +1,40 @@
 .hamburgerButtonWrapper {
+  position: relative;
+  flex-shrink: 0;
   display: block;
-  margin: 16px;
-  z-index: 11;
-  div {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 20;
+
+  span {
+    position: absolute;
+    left: 7px;
     width: 30px;
     height: 2px;
-    background-color: #000000;
-    margin: 8px 0;
+    background-color: #000;
     border-radius: 5px;
-    transform-origin: 0;
-    transition: all 0.3s linear;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 
-    &:nth-child(1) {
-      transform: rotate(0);
-    }
-    &:nth-child(2) {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    &:nth-child(3) {
-      transform: rotate(0);
-    }
-  }
-
-  @media only screen and (min-width: 768px) {
-    display: none;
+    &:nth-child(1) { top: 12px; }
+    &:nth-child(2) { top: 21px; }
+    &:nth-child(3) { top: 30px; }
   }
 
   &.open {
-    div:nth-child(1) {
-      transform: rotate(45deg);
-    }
-    div:nth-child(2) {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    div:nth-child(3) {
-      transform: rotate(-45deg);
-    }
+    span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    span { transition: none; }
   }
 }
-
