@@ -76,3 +76,10 @@ The Hot Drinks link opens `/#/hot-drinks`. Edit the six drink cards in
 converted from HEIC to a browser-compatible JPEG. Replace each `image` reference
 when individual drink photos are available. The carousel supports swiping,
 previous/next buttons, and Arrow, Home, and End keys when the list has focus.
+
+## Product photo galleries
+
+Items in `src/data/bread.js` (Pan) and `src/data/cakes.js` (Pasteles) can use either `image: photo` for one photo,
+or `images: [firstPhoto, secondPhoto, ...]` for multiple photos. Multiple-photo
+items display green selection dots below the image and support swiping and
+Left/Right keys while a dot has focus. Each product keeps its own photo selection.
